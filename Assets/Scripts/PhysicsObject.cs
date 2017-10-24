@@ -24,6 +24,7 @@ public class PhysicsObject : MonoBehaviour
     void OnEnable()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        rb2d.freezeRotation = true;
     }
 
     void Start()
@@ -37,9 +38,14 @@ public class PhysicsObject : MonoBehaviour
     {
         targetVelocity = Vector2.zero;
         ComputeVelocity();
+        DashAbilityCheck();
     }
 
     protected virtual void ComputeVelocity()
+    {
+
+    }
+    protected virtual void DashAbilityCheck()
     {
 
     }

@@ -27,7 +27,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
         move.x = Input.GetAxis("Horizontal");
 
-        if(velocity.y == 0)
+        if(velocity.y == 0 || (velocity.y > -0.01 && velocity.y < 0.01))
         {
             jumpCount = 0;
         }
