@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Emil.unity
+    guid: d822b6ff7c2a9eb41a78614ab04cec7d
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: d438da7f52906a84aaea5e3ca973d1db
