@@ -27,18 +27,18 @@ public class PlayerPlatformerController : PhysicsObject {
 
         move.x = Input.GetAxis("Horizontal");
 
-        if(velocity.y == 0 || (velocity.y > -0.01 && velocity.y < 0.01))
+        if(velocity.y == 0 || (velocity.y > -0.00001 && velocity.y < 0.00001))
         {
             jumpCount = 0;
         }
 
         if (Input.GetButtonDown("Jump") && jumpCount < 2)
         {
-
+            jumpCount++;
             velocity.y = jumpTakeOffSpeed;
             print("Inside if statement" + jumpCount);
 
-            jumpCount++;
+            
         }
         else if (Input.GetButtonUp("Jump"))
         {
@@ -47,7 +47,7 @@ public class PlayerPlatformerController : PhysicsObject {
                 velocity.y = velocity.y * .5f;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(rightMovement))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(rightMovement))
         {
             if (!spriteFlip)
             {
