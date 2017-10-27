@@ -8,7 +8,6 @@ public class DashAbility : PhysicsObject
     public DashState dashState;
     public float dashTimer;
     public float maxDash = 20f;
-    public Vector2 savedVelocity;
 
     private float timeStorage;
     private Transform transformRenderer;
@@ -59,7 +58,7 @@ public class DashAbility : PhysicsObject
             case DashState.Cooldown:
                 if(cont.gravityController == 0f)
                 {
-                    cont.gravityController = .5f;
+                    cont.gravityController = .4f;
                 }
                 else if(cont.gravityController <= 1f)
                 {
@@ -74,7 +73,7 @@ public class DashAbility : PhysicsObject
                     
                     
                 }
-                rb2d.velocity = savedVelocity;
+                
                 dashTimer -= Time.deltaTime;
                 print(timeStorage);
                 if (dashTimer <= 0)

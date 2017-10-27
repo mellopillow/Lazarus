@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerPlatformerController : PhysicsObject {
     public float maxSpeed = 9;
     public float jumpTakeOffSpeed = 9;
+
+    public int maxHealth = 5;
+    public int currentHealth = 5;
+
     public KeyCode rightMovement = KeyCode.D;
     public KeyCode leftMovement = KeyCode.A;
 
@@ -48,7 +52,7 @@ public class PlayerPlatformerController : PhysicsObject {
                 velocity.y = velocity.y * .5f;
             }
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(rightMovement))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(rightMovement))
         {
             if (!spriteFlip)
             {
@@ -56,7 +60,7 @@ public class PlayerPlatformerController : PhysicsObject {
                 spriteFlip = !spriteFlip;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(leftMovement))
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(leftMovement))
         {
             if(spriteFlip)
             {
