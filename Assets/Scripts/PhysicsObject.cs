@@ -7,6 +7,8 @@ public class PhysicsObject : MonoBehaviour
 
     public float minGroundNormalY = .65f;
     public float gravityModifier = 2.8f;
+    public float gravityController = 1f;
+    public float dashCooldown = 5f;
 
     protected Vector2 targetVelocity;
     protected bool grounded;
@@ -16,7 +18,6 @@ public class PhysicsObject : MonoBehaviour
     protected ContactFilter2D contactFilter;
     protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
     protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(16);
-
 
     protected const float minMoveDistance = 0.001f;
     protected const float shellRadius = 0.01f;
@@ -50,11 +51,13 @@ public class PhysicsObject : MonoBehaviour
 
     }
 
+
+
     void FixedUpdate()
     {
+        
         velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
         velocity.x = targetVelocity.x;
-
         grounded = false;
 
         Vector2 deltaPosition = velocity * Time.deltaTime;
@@ -65,7 +68,11 @@ public class PhysicsObject : MonoBehaviour
 
         Movement(move, false);
 
-        move = Vector2.up * deltaPosition.y;
+        
+
+        move = Vector2.up * deltaPosition.y * gravityController;
+
+        //print(move);
 
         Movement(move, true);
     }
@@ -110,7 +117,8 @@ public class PhysicsObject : MonoBehaviour
 
         }
 
-        rb2d.position = rb2d.position + move.normalized * distance;
+        rb2d.position = rb2d.position + move.normalized * distance * gravityController;
     }
+    
 
 }

@@ -10,21 +10,25 @@ public class DashAbility : PhysicsObject
     public float maxDash = 20f;
     public Vector2 savedVelocity;
 
+    private float timeStorage;
     private Transform transformRenderer;
     private SpriteRenderer spriteRenderer;
+    private PlayerPlatformerController cont;
     protected override void DashAbilityCheck()
     {
-        gravityModifier = 0f;
+        cont = GetComponent<PlayerPlatformerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
         switch (dashState)
         {
             case DashState.Ready:
                 var isDashKeyDown = Input.GetKeyDown(KeyCode.LeftShift);
                 if (isDashKeyDown)
                 {
-                    
+                    cont.gravityController = 0f;
                     rb2d = GetComponent<Rigidbody2D>();
-                    
+                   
+                    gravityController = 0;
                     if (spriteRenderer.flipX)
                     {
                         rb2d.velocity = new Vector2(rb2d.velocity.x - 30f, 0);
@@ -36,20 +40,43 @@ public class DashAbility : PhysicsObject
                     
                     dashState = DashState.Dashing;
                 }
+                
                 break;
             case DashState.Dashing:
+             
                 transformRenderer = GetComponent<Transform>();
                 transformRenderer.rotation = Quaternion.Euler(0, 0, 0);
                 dashTimer += Time.deltaTime * 200;
+                
                 if (dashTimer >= maxDash)
                 {
-                    dashTimer = maxDash;
+                    timeStorage = Time.time - timeStorage;
+                    dashTimer = dashCooldown;
                     rb2d.velocity = new Vector2(0, 0);
                     dashState = DashState.Cooldown;
                 }
                 break;
             case DashState.Cooldown:
-                dashTimer -= Time.deltaTime * 10;
+                if(cont.gravityController == 0f)
+                {
+                    cont.gravityController = .5f;
+                }
+                else if(cont.gravityController <= 1f)
+                {
+                    if(cont.gravityController * 1.2f >= 1f)
+                    {
+                        cont.gravityController = 1f;
+                    }
+                    else
+                    {
+                        cont.gravityController = cont.gravityController * 1.02f;
+                    }
+                    
+                    
+                }
+                rb2d.velocity = savedVelocity;
+                dashTimer -= Time.deltaTime;
+                print(timeStorage);
                 if (dashTimer <= 0)
                 {
                     dashTimer = 0;

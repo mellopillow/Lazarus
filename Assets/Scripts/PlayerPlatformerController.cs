@@ -30,14 +30,15 @@ public class PlayerPlatformerController : PhysicsObject {
         if(velocity.y == 0 || (velocity.y > -0.00001 && velocity.y < 0.00001))
         {
             jumpCount = 0;
+            velocity.y = 0;
         }
+
 
         if (Input.GetButtonDown("Jump") && jumpCount < 2)
         {
+            gravityController = 1f;
             jumpCount++;
             velocity.y = jumpTakeOffSpeed;
-            print("Inside if statement" + jumpCount);
-
             
         }
         else if (Input.GetButtonUp("Jump"))
