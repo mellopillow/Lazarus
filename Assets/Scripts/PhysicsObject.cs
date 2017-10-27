@@ -8,7 +8,7 @@ public class PhysicsObject : MonoBehaviour
     public float minGroundNormalY = .65f;
     public float gravityModifier = 2.8f;
     public float gravityController = 1f;
-    public float dashCooldown = 5f;
+   
 
     protected Vector2 targetVelocity;
     protected bool grounded;

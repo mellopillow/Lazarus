@@ -8,6 +8,7 @@ public class DashAbility : PhysicsObject
     public DashState dashState;
     public float dashTimer;
     public float maxDash = 20f;
+    public float dashCooldown = 5f;
 
     private float timeStorage;
     private Transform transformRenderer;
