@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Attack : PhysicsObject {
 
-    private bool attacking = false;
+    public bool attacking = false;
 
     private float attack = 0f;
     private float attackCooldown = 0.2f;

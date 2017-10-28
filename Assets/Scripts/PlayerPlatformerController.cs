@@ -17,19 +17,28 @@ public class PlayerPlatformerController : PhysicsObject {
     private bool spriteFlip = true; //true is facing right, false is facing left
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private Attack isPlayerAttacking;
 	// Use this for initialization
 	void Awake () {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        isPlayerAttacking = GetComponent<Attack>();
         //animator = GetComponent<Animator>();
 	}
 
     // Update is called once per frame
     protected override void ComputeVelocity()
     {
-        
         Vector2 move = Vector2.zero;
-
-        move.x = Input.GetAxis("Horizontal");
+        if (isPlayerAttacking.attacking)
+        {
+            move.x = 0;
+        }
+        else
+        {
+            move.x = Input.GetAxis("Horizontal");
+        }
+        
+        
 
         if(velocity.y == 0 || (velocity.y > -0.00001 && velocity.y < 0.00001))
         {
