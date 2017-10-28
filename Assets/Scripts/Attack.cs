@@ -7,7 +7,7 @@ public class Attack : PhysicsObject {
     public bool attacking = false;
 
     private float attack = 0f;
-    private float attackCooldown = 0.2f;
+    private float attackCooldown = 0.3f;
 
     public Collider2D attackTriggerRight;
 

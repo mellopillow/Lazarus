@@ -68,11 +68,9 @@ public class PhysicsObject : MonoBehaviour
 
         Movement(move, false);
 
-        
+
 
         move = Vector2.up * deltaPosition.y * gravityController;
-
-        //print(move);
 
         Movement(move, true);
     }
