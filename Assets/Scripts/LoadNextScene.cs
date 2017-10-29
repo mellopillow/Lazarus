@@ -15,6 +15,7 @@ public class LoadNextScene : MonoBehaviour {
     {
         print("Trigger");
         levelManager.LoadLevel(levelToEnter);
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision)
