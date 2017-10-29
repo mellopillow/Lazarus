@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Attack : PhysicsObject {
 
@@ -20,6 +21,7 @@ public class Attack : PhysicsObject {
     {
         if (Input.GetKeyDown(KeyCode.C) && !attacking)
         {
+            print(SceneManager.sceneCount);
             attacking = true;
             attack = attackCooldown;
 
