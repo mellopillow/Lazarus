@@ -29,3 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zach.unity
     guid: 3da2c57ee2623bf4d923207ff39e4820
+  - enabled: 1
+    path: Assets/Scenes/sector2.unity
+    guid: 2923ca489e7719b43933095a489e7166
+  - enabled: 1
+    path: Assets/Scenes/sector3.unity
+    guid: f42d3219ee3eb1d4d93b3a3e24be102b
