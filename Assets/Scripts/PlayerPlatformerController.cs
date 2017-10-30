@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerPlatformerController : PhysicsObject {
     public float maxSpeed = 9;
     public float jumpTakeOffSpeed = 9;
+
+    public int maxHealth = 5;
+    public int currentHealth = 5;
+
     public KeyCode rightMovement = KeyCode.D;
     public KeyCode leftMovement = KeyCode.A;
 
@@ -13,32 +17,42 @@ public class PlayerPlatformerController : PhysicsObject {
     private bool spriteFlip = true; //true is facing right, false is facing left
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private Attack isPlayerAttacking;
 	// Use this for initialization
 	void Awake () {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        isPlayerAttacking = GetComponent<Attack>();
         //animator = GetComponent<Animator>();
 	}
 
     // Update is called once per frame
     protected override void ComputeVelocity()
     {
-        
         Vector2 move = Vector2.zero;
+        if (isPlayerAttacking.attacking)
+        {
+            move.x = 0;
+        }
+        else
+        {
+            move.x = Input.GetAxis("Horizontal");
+        }
+        
+        
 
-        move.x = Input.GetAxis("Horizontal");
-
-        if(velocity.y == 0 || (velocity.y > -0.01 && velocity.y < 0.01))
+        if(velocity.y == 0 || (velocity.y > -0.00001 && velocity.y < 0.00001))
         {
             jumpCount = 0;
+            velocity.y = 0;
         }
+
 
         if (Input.GetButtonDown("Jump") && jumpCount < 2)
         {
-
-            velocity.y = jumpTakeOffSpeed;
-            print("Inside if statement" + jumpCount);
-
+            gravityController = 1f;
             jumpCount++;
+            velocity.y = jumpTakeOffSpeed;
+            
         }
         else if (Input.GetButtonUp("Jump"))
         {
@@ -47,7 +61,7 @@ public class PlayerPlatformerController : PhysicsObject {
                 velocity.y = velocity.y * .5f;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(rightMovement))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(rightMovement))
         {
             if (!spriteFlip)
             {
@@ -55,7 +69,7 @@ public class PlayerPlatformerController : PhysicsObject {
                 spriteFlip = !spriteFlip;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(leftMovement))
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(leftMovement))
         {
             if(spriteFlip)
             {
