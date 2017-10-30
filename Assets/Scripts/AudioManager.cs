@@ -44,6 +44,16 @@ public class AudioManager : MonoBehaviour {
         
     }
 
+    public void PlaySFX()
+    {
+        sfxSource.Play();
+    }
+
+    public void PlayMusicSource()
+    {
+        musicSource.Play();
+    }
+
     public void PlaySFXClip(AudioClip clip, float volume)
     {
         sfxSource.PlayOneShot(clip, volume);
@@ -94,5 +104,15 @@ public class AudioManager : MonoBehaviour {
     {
         int randomIndex = Random.Range(0, clips.Length - 1);
         PlayMusic(clips[randomIndex], .9f);
+    }
+
+    public void playSFX1()
+    {
+        sfxSource.PlayOneShot(sfx[0]);
+    }
+
+    public void playSFX2()
+    {
+        sfxSource.PlayOneShot(sfx[1]);
     }
 }
