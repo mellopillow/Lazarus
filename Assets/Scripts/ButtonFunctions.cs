@@ -26,4 +26,17 @@ public class ButtonFunctions : MonoBehaviour {
     {
         
     }
+    public void LoadByIndex(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+        }
 }

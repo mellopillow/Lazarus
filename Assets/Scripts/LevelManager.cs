@@ -14,13 +14,13 @@ public class LevelManager : MonoBehaviour {
     }
     IEnumerator Load()
     {
-        yield return new WaitForSeconds(.6f);
+        yield return new WaitForSeconds(.4f);
         Debug.Log("Load");
         
 
         float fadeTime = GetComponent<Fade>().BeginFade(1);
 
-        yield return new WaitForSeconds(.6f);
+        yield return new WaitForSeconds(.4f);
 
 
 
