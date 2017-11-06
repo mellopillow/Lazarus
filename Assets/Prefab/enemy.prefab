@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4006957700461164}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Raycast Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 212006155754633894}
   - component: {fileID: 114940970498036520}
   - component: {fileID: 61516626039463124}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -69,22 +69,48 @@ public class BasicEnemyAI : MonoBehaviour {
         //Check if player is in range
         float distanceToPlayer = Vector3.Distance(transform.position, target.position);
 
+        if (right)
+        {
+            Debug.DrawLine(raycastPoint.position, raycastPoint.position + new Vector3(5f, 0f, 0f));
+        }
+        else
+        {
+            Debug.DrawLine(raycastPoint.position, raycastPoint.position + new Vector3(-5f, 0f, 0f));
+        }
         if (distanceToPlayer < attackRange)
         {
+            RaycastHit2D hit;
             if (Time.time > lastAttackTime + attackDelay)
             {
                 //Check if there is a clear line of sight to player
-                RaycastHit2D hit = Physics2D.Raycast(raycastPoint.position, transform.right, attackRange);
+                
+                if (right)
+                {
+                    
+                    hit = Physics2D.Raycast(raycastPoint.position, new Vector2(1,0), attackRange);
+                }
+                else
+                {
+                    
+                    hit = Physics2D.Raycast(raycastPoint.position, new Vector2(-1, 0), attackRange);
+                }
+                
+                
+                
                 if (hit.transform == target)
                 {
-                    print("hit");
+                    
+                    //print("hit");
                     GameObject newBullet = Instantiate(projectile, raycastPoint.position, transform.rotation);
+                    
                     if (right)
                     {
+                      
                         newBullet.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(projectileForce, 0f));
                     }
                     else
                     {
+                        
                         newBullet.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(-projectileForce, 0f));
 
                     }
@@ -92,7 +118,7 @@ public class BasicEnemyAI : MonoBehaviour {
                 }
                 else
                 {
-                    print("not found");
+                    //print("not found");
                 }
             }
         }
