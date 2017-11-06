@@ -18,9 +18,9 @@ TagManager:
   - Level
   - Attack
   - EndLevel
-  - 
-  - 
-  - 
+  - EnemyAttack
+  - Enemy
+  - Character
   - 
   - 
   - 
