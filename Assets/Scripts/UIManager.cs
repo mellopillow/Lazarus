@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour {
 
     public GameManager GM;
+    public static UIManager instance = null;
     
     GameObject SceneText;
     GameObject GameText;
@@ -12,9 +13,19 @@ public class UIManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
+        Debug.Log("Start");
+        //Check for AudioManager
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+        {
+            Destroy(this.gameObject);
+        }
 
-	}
+        //Use if you don't want to destroy between scenes.
+        DontDestroyOnLoad(this.gameObject);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

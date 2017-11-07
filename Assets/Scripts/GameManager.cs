@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour {
     {
         Debug.Log("paused");
         Time.timeScale = 0;
+
         PauseMenu.SetActive(true);
         Debug.Log("set active");
     }
