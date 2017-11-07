@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         Debug.Log("Start");
         //Check for AudioManager
         if (instance == null)

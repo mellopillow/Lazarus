@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         //PauseMenu.gameObject.SetActive(false);
 
         Debug.Log("Start");

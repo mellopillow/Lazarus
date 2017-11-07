@@ -14,17 +14,12 @@ public class AudioManager : MonoBehaviour {
     public AudioClip[] sfx;
     
 
+   
+
     void Awake()
     {
-        
-      PlayMusic(music[0], .5f);
-
-        
-    }
-
-    void Start()
-    {
         Debug.Log("Start");
+        PlayMusic(music[0], .5f);
         //Check for AudioManager
         if (instance == null)
             instance = this;
