@@ -10,15 +10,21 @@ public class DashAbility : PhysicsObject
     public float maxDash = 20f;
     public float dashCooldown = 5f;
 
+    private bool dashing;
     private float timeStorage;
     private Transform transformRenderer;
     private SpriteRenderer spriteRenderer;
     private PlayerPlatformerController cont;
+    private Animator animator;
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     protected override void DashAbilityCheck()
     {
         cont = GetComponent<PlayerPlatformerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
+        animator.SetBool("dashing", dashing);
         switch (dashState)
         {
             case DashState.Ready:
@@ -39,11 +45,11 @@ public class DashAbility : PhysicsObject
                     }
                     
                     dashState = DashState.Dashing;
+                    dashing = true;
                 }
                 
                 break;
             case DashState.Dashing:
-             
                 transformRenderer = GetComponent<Transform>();
                 transformRenderer.rotation = Quaternion.Euler(0, 0, 0);
                 dashTimer += Time.deltaTime * 200;
@@ -54,9 +60,11 @@ public class DashAbility : PhysicsObject
                     dashTimer = dashCooldown;
                     rb2d.velocity = new Vector2(0, 0);
                     dashState = DashState.Cooldown;
+                    dashing = false;
                 }
                 break;
             case DashState.Cooldown:
+
                 if(cont.gravityController == 0f)
                 {
                     cont.gravityController = .4f;
@@ -81,6 +89,7 @@ public class DashAbility : PhysicsObject
                 {
                     dashTimer = 0;
                     dashState = DashState.Ready;
+                    
                 }
                 break;
         }

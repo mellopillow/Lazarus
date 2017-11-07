@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerPlatformerController : PhysicsObject {
     public float maxSpeed = 9;
     public float jumpTakeOffSpeed = 9;
-
+    
     public int maxHealth = 5;
     public int currentHealth = 5;
 
@@ -13,7 +13,7 @@ public class PlayerPlatformerController : PhysicsObject {
     public KeyCode leftMovement = KeyCode.A;
 
     protected int jumpCount = 0;
-
+    
     private float damageTimer = 1f;
     private float invulnerability = 0f;
     private bool tookDamage = false;
@@ -27,7 +27,7 @@ public class PlayerPlatformerController : PhysicsObject {
         spriteRenderer = GetComponent<SpriteRenderer>();
         isPlayerAttacking = GetComponent<Attack>();
         levelManager = GameObject.FindObjectOfType<LevelManager>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
    
@@ -87,6 +87,7 @@ public class PlayerPlatformerController : PhysicsObject {
         }
         else if (Input.GetButtonUp("Jump"))
         {
+            grounded = false;
             if (velocity.y > 0)
             {
                 velocity.y = velocity.y * .5f;
@@ -108,10 +109,9 @@ public class PlayerPlatformerController : PhysicsObject {
                 spriteFlip = !spriteFlip;
             }
         }
-
-        //animator.SetBool("grounded", grounded);
-        //animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
-
+        animator.SetBool("grounded", grounded);
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+        
         targetVelocity = move * maxSpeed;
        
     }
