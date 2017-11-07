@@ -18,7 +18,7 @@ public class PlayerPlatformerController : PhysicsObject {
     private float invulnerability = 0f;
     private bool tookDamage = false;
     private bool spriteFlip = true; //true is facing right, false is facing left
-    private LevelManager levelmanager;
+    private LevelManager levelManager;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private Attack isPlayerAttacking;
@@ -26,8 +26,9 @@ public class PlayerPlatformerController : PhysicsObject {
 	void Awake () {
         spriteRenderer = GetComponent<SpriteRenderer>();
         isPlayerAttacking = GetComponent<Attack>();
+        levelManager = GameObject.FindObjectOfType<LevelManager>();
         //animator = GetComponent<Animator>();
-	}
+    }
 
    
     // Update is called once per frame
@@ -128,7 +129,7 @@ public class PlayerPlatformerController : PhysicsObject {
             
             if(currentHealth == 0)
             {
-                Destroy(this.gameObject);
+                levelManager.LoadLevel("Main");
             }
         }
     }
@@ -146,7 +147,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
             if (currentHealth == 0)
             {
-                levelmanager.LoadLevel("Main");
+                levelManager.LoadLevel("Main");
             }
         }
     }
