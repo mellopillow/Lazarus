@@ -18,6 +18,7 @@ public class PlayerPlatformerController : PhysicsObject {
     private float invulnerability = 0f;
     private bool tookDamage = false;
     private bool spriteFlip = true; //true is facing right, false is facing left
+    private LevelManager levelmanager;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private Attack isPlayerAttacking;
@@ -145,7 +146,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
             if (currentHealth == 0)
             {
-                Destroy(this.gameObject);
+                levelmanager.LoadLevel("Main");
             }
         }
     }
