@@ -95,7 +95,7 @@ public class PlayerPlatformerController : PhysicsObject {
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(rightMovement))
         {
-            if (!spriteFlip)
+            if (!spriteFlip && !(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(leftMovement)))
             {
                 spriteRenderer.flipX = !spriteRenderer.flipX;
                 spriteFlip = !spriteFlip;
