@@ -391,16 +391,16 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.086
+  m_Time: 0.03
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
-        time: 0.02488327
-        value: 0.17790985
+        time: 0
+        value: 0.030677795
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -880,16 +880,16 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.086
+  m_Time: 0.03
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
-        time: 0.02488327
-        value: 0.17790985
+        time: 0
+        value: 0.030677795
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1360,7 +1360,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1436282545}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.51, y: 5.49, z: -0.03845718}
+  m_LocalPosition: {x: -3.4, y: 4.16, z: -0.03845718}
   m_LocalScale: {x: 9.973199, y: 11.461729, z: 1}
   m_Children: []
   m_Father: {fileID: 1823698945}
@@ -1402,7 +1402,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.086
+  m_Time: 0.06
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.1
@@ -1410,8 +1410,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
-        time: 0.02488327
-        value: 0.17790985
+        time: 0
+        value: 0.15337372
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1594,11 +1594,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4489022196658452, guid: dd7974252f51983428d905798ac49c72, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -14.25
+      value: -13.443
       objectReference: {fileID: 0}
     - target: {fileID: 4489022196658452, guid: dd7974252f51983428d905798ac49c72, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.73
+      value: -0.281
       objectReference: {fileID: 0}
     - target: {fileID: 4489022196658452, guid: dd7974252f51983428d905798ac49c72, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1684,9 +1684,52 @@ Prefab:
       propertyPath: m_Name
       value: Trail1
       objectReference: {fileID: 0}
+    - target: {fileID: 96431680527317254, guid: dd7974252f51983428d905798ac49c72,
+        type: 2}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.15337372
+      objectReference: {fileID: 0}
+    - target: {fileID: 96431680527317254, guid: dd7974252f51983428d905798ac49c72,
+        type: 2}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 96431680527317254, guid: dd7974252f51983428d905798ac49c72,
+        type: 2}
+      propertyPath: m_Time
+      value: 0.06
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd7974252f51983428d905798ac49c72, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1718324473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1718324476}
+  m_Layer: 0
+  m_Name: Particle System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1718324476
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1718324473}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -13.516387, y: 0.11551769, z: 0.02319336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1749807746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,7 +1933,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.4392157, g: 0.4862745, b: 0.5568628, a: 1}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
