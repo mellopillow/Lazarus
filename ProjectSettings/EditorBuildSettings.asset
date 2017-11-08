@@ -35,3 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/sector3.unity
     guid: f42d3219ee3eb1d4d93b3a3e24be102b
+  - enabled: 1
+    path: Assets/Scenes/Emil2.unity
+    guid: 99341c9a8ac7973419a4e1eb1cf61245

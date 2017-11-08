@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ButtonFunctions : MonoBehaviour {
 
+    
+
+    GameObject SceneText;
+    GameObject GameText;
+
+
+    // Use this for initialization
+   
     //public GameObject GameManager;
 
     // Start button

@@ -1,37 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-    public UIManager UI;
+    //public UIManager UI;
     public GameObject PauseMenu;
     private bool paused;
-    public static GameManager instance = null;
+    
+    
 
-
-
-    // Use this for initialization
-    void Awake () {
-        //PauseMenu.gameObject.SetActive(false);
-
+    void Start()
+    {
         Debug.Log("Start");
-        //Check for AudioManager
-        if (instance == null)
-            instance = this;
-        else if (instance != this)
+        Time.timeScale = 1;
+        Debug.Log(SceneManager.GetActiveScene().name);
+        if (SceneManager.GetActiveScene().name == "Emil")
         {
-            Destroy(this.gameObject);
+            AudioManager.instance.StopMusic();
+            AudioManager.instance.PlayMusicSource();
         }
-
-        //Use if you don't want to destroy between scenes.
-        DontDestroyOnLoad(this.gameObject);
     }
-	
+    // Use this for initialization
+    
 	// Update is called once per frame
 	void Update () {
-		
+		if (SceneManager.GetActiveScene().name != "Emil")
+        {
+            ScanForKeyStroke();
+        }
 	}
+
+    
 
     public void TogglePauseMenu()
     {
@@ -58,8 +59,15 @@ public class GameManager : MonoBehaviour {
 
     public void Unpause()
     {
-        Debug.Log("paused");
+        Debug.Log("unpaused");
         Time.timeScale = 1;
         PauseMenu.SetActive(false);
+    }
+
+    void ScanForKeyStroke()
+    {
+    if (Input.GetKeyDown("escape")){
+        TogglePauseMenu();
+       }
     }
 }
