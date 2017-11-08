@@ -22,18 +22,41 @@ public class PlayerPlatformerController : PhysicsObject {
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private Attack isPlayerAttacking;
-	// Use this for initialization
-	void Awake () {
+    private GameObject trailOne;
+    private GameObject trailTwo;
+    private GameObject trailThree;
+    private GameObject trailFour;
+    // Use this for initialization
+    void Awake () {
         spriteRenderer = GetComponent<SpriteRenderer>();
         isPlayerAttacking = GetComponent<Attack>();
         levelManager = GameObject.FindObjectOfType<LevelManager>();
         animator = GetComponent<Animator>();
+        trailOne = GameObject.Find("Trail1");
+        trailThree = GameObject.Find("Trail2");
+        trailTwo = GameObject.Find("TrailFlip1");
+        trailFour = GameObject.Find("TrailFlip2");
     }
 
    
     // Update is called once per frame
     protected override void ComputeVelocity()
     {
+        if (!spriteFlip)
+        {
+            trailOne.GetComponent<TrailRenderer>().enabled = false;
+            trailTwo.GetComponent<TrailRenderer>().enabled = true;
+            trailThree.GetComponent<TrailRenderer>().enabled = false;
+            trailFour.GetComponent<TrailRenderer>().enabled = true;
+
+        }
+        else
+        {
+            trailOne.GetComponent<TrailRenderer>().enabled = true;
+            trailTwo.GetComponent<TrailRenderer>().enabled = false;
+            trailThree.GetComponent<TrailRenderer>().enabled = true;
+            trailFour.GetComponent<TrailRenderer>().enabled = false;
+        }
         if (tookDamage)
         {
             if (invulnerability > 0f)
