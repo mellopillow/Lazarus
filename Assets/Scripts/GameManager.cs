@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 
     //public UIManager UI;
     public GameObject PauseMenu;
+    public GameObject InGameMenu;
     private bool paused;
     
     
@@ -16,7 +17,7 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Start");
         Time.timeScale = 1;
         Debug.Log(SceneManager.GetActiveScene().name);
-        if (SceneManager.GetActiveScene().name == "Emil")
+        if (SceneManager.GetActiveScene().name == "Main_Menu")
         {
             AudioManager.instance.StopMusic();
             AudioManager.instance.PlayMusicSource();
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = 0;
 
         PauseMenu.SetActive(true);
+        InGameMenu.SetActive(false);
         Debug.Log("set active");
     }
 
@@ -62,6 +64,7 @@ public class GameManager : MonoBehaviour {
         Debug.Log("unpaused");
         Time.timeScale = 1;
         PauseMenu.SetActive(false);
+        InGameMenu.SetActive(true);
     }
 
     void ScanForKeyStroke()
