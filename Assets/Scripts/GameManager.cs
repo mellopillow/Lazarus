@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour {
             AudioManager.instance.StopMusic();
             AudioManager.instance.PlayMusicSource();
         }
+        else
+        {
+            AudioManager.instance.PlayTheme();
+        }
     }
     // Use this for initialization
     
