@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour {
     void Awake()
     {
         Debug.Log("Start");
-        PlayMusic(music[0], .5f);
+        PlayMusicSource();
         //Check for AudioManager
         if (instance == null)
             instance = this;
@@ -61,6 +61,11 @@ public class AudioManager : MonoBehaviour {
             musicSource.Stop();
         musicSource.clip = clip;
         musicSource.Play();
+    }
+
+    public void PlayTheme()
+    {
+        PlayMusic(music[0], .9f);
     }
 
     public void StopMusic()

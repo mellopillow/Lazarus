@@ -24,4 +24,9 @@ public class AudioControl : MonoBehaviour {
     {
         AudioManager.instance.playSFX2();
     }
+
+    public void playTheme()
+    {
+        AudioManager.instance.PlayTheme();
+    }
 }
