@@ -12,6 +12,8 @@ public class BasicEnemyAI : MonoBehaviour {
     public Transform target;
     public float chaseRange;
 
+    public bool shooting;
+    public bool patrolling;
     public float attackRange;
     public int damage;
     private float lastAttackTime;
@@ -21,15 +23,19 @@ public class BasicEnemyAI : MonoBehaviour {
     public float projectileForce;
     public Transform raycastPoint;
     private bool right;
+
+    private Animator animator;
+
 	// Use this for initialization
 	void Start () {
         currentPatrolIndex = 0;
         currentPatrolPoint = patrolPoints[currentPatrolIndex];
 	}
-	
+	void Awake () {
+        animator = GetComponent<Animator>();
+    }
 	// Update is called once per frame
 	void Update () {
-        
         //Patrolling
         if (Vector3.Distance(transform.position, currentPatrolPoint.position) < 1f)
         {
@@ -47,23 +53,33 @@ public class BasicEnemyAI : MonoBehaviour {
         Vector3 patrolPointDir = currentPatrolPoint.position - transform.position;
         Vector3 newScale;
         Quaternion newRotation;
-        if (patrolPointDir.x < 0f)
+        if (shooting != true)
         {
-            newRotation = Quaternion.Euler(0f, 0f, 0f);
-            transform.rotation = newRotation;
-            transform.Translate(-transform.right * Time.deltaTime * speed, Space.Self);
-            right = false;
-            //newScale = new Vector3(0.3320676f, 0.4630453f, 1);
-            //transform.localScale = newScale;
+            patrolling = true;
+            animator.SetBool("patrolling", patrolling);
+            if (patrolPointDir.x < 0f)
+            {
+                newRotation = Quaternion.Euler(0f, 0f, 0f);
+                transform.rotation = newRotation;
+                transform.Translate(-transform.right * Time.deltaTime * speed, Space.Self);
+                right = false;
+                //newScale = new Vector3(0.3320676f, 0.4630453f, 1);
+                //transform.localScale = newScale;
+            }
+            if(patrolPointDir.x > 0f)
+            {
+                newRotation = Quaternion.Euler(0f, 180f, 0f);
+                transform.rotation = newRotation;
+                transform.Translate(transform.right * Time.deltaTime * speed, Space.Self);
+                right = true;
+                //newScale = new Vector3(-0.3320676f, 0.4630453f, 1);
+                //transform.localScale = newScale;
+            }
         }
-        if(patrolPointDir.x > 0f)
+        else
         {
-            newRotation = Quaternion.Euler(0f, 180f, 0f);
-            transform.rotation = newRotation;
-            transform.Translate(transform.right * Time.deltaTime * speed, Space.Self);
-            right = true;
-            //newScale = new Vector3(-0.3320676f, 0.4630453f, 1);
-            //transform.localScale = newScale;
+            patrolling = false;
+            animator.SetBool("patrolling", patrolling);
         }
 
         //Check if player is in range
@@ -99,8 +115,9 @@ public class BasicEnemyAI : MonoBehaviour {
                 
                 if (hit.transform == target)
                 {
-                    
-                    //print("hit");
+                    shooting = true; 
+                    animator.SetBool("shooting", shooting);  
+                    print("hit");
                     GameObject newBullet = Instantiate(projectile, raycastPoint.position, transform.rotation);
                     
                     if (right)
@@ -118,9 +135,16 @@ public class BasicEnemyAI : MonoBehaviour {
                 }
                 else
                 {
-                    //print("not found");
+                    shooting = false;
+                    animator.SetBool("shooting", shooting);  
+                    print("not found");
                 }
             }
+        }
+        else
+        {
+            shooting = false;
+            animator.SetBool("shooting", shooting);  
         }
     }
 }

@@ -40,6 +40,7 @@ public class PhysicsObject : MonoBehaviour
         targetVelocity = Vector2.zero;
         ComputeVelocity();
         DashAbilityCheck();
+        RecallAbilityCheck();
     }
 
     protected virtual void ComputeVelocity()
@@ -50,7 +51,10 @@ public class PhysicsObject : MonoBehaviour
     {
 
     }
+    protected virtual void RecallAbilityCheck()
+    {
 
+    }
 
 
     void FixedUpdate()
