@@ -137,7 +137,7 @@ public class BasicEnemyAI : MonoBehaviour {
                 {
                     shooting = false;
                     animator.SetBool("shooting", shooting);  
-                    print("not found");
+                    //print("not found");
                 }
             }
         }
