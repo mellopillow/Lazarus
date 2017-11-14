@@ -30,6 +30,7 @@ public class RecallAbility : PhysicsObject
         animator = GetComponent<Animator>();
         recallOutline = GameObject.Find("RecallOutline");
         startLocation = transformRenderer.position;
+        recallOutline.GetComponent<SpriteRenderer>().enabled = false; // turn off the outline
     }
 
     protected override void RecallAbilityCheck()
