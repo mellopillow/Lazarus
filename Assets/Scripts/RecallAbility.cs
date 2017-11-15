@@ -8,34 +8,39 @@ public class RecallAbility : PhysicsObject
     public RecallState recallState;
     public float recallCooldownTimer;
     public float recallCooldown = 10f;
-
-    public Vector2 lastLocation;
+    public Vector3 lastLocation;
     public int lastHeath;
+    public Vector3 startLocation;
+
     private bool recalling;
     private Transform transformRenderer;
     private SpriteRenderer spriteRenderer;
     private PlayerPlatformerController cont;
     private Animator animator;
-
+    private float timer = 3f;
     private GameObject recallOutline;
+    private Queue recallList = new Queue();
+    private Queue recallHealthList = new Queue();
+
 
     void Awake()
     {
+        transformRenderer = GetComponent<Transform>();
+        cont = GetComponent<PlayerPlatformerController>();
         animator = GetComponent<Animator>();
         recallOutline = GameObject.Find("RecallOutline");
-
-        InvokeRepeating("UpdateLast", 0.0f, 3f);
+        startLocation = transformRenderer.position;
+        recallOutline.GetComponent<SpriteRenderer>().enabled = false; // turn off the outline
     }
 
     protected override void RecallAbilityCheck()
     {
         cont = GetComponent<PlayerPlatformerController>();
-        transformRenderer = GetComponent<Transform>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         switch (recallState)
         {
             case RecallState.Ready:
-                var isRecallKeyDown = Input.GetKeyDown(KeyCode.E);
+                var isRecallKeyDown = Input.GetKeyDown(KeyCode.X);
                 if (isRecallKeyDown)
                 {
                     print("Recalling!");
@@ -43,7 +48,7 @@ public class RecallAbility : PhysicsObject
                     cont.currentHealth = lastHeath;
                     recallState = RecallState.Cooldown;
                     recallCooldownTimer = recallCooldown;
-                    recallOutline.GetComponent<SpriteRenderer>().enabled = false;
+                    //recallOutline.GetComponent<SpriteRenderer>().enabled = false;
                 }
                 break;
 
@@ -54,20 +59,35 @@ public class RecallAbility : PhysicsObject
                 {
                     recallCooldownTimer = 0;
                     recallState = RecallState.Ready;
-                    recallOutline.GetComponent<SpriteRenderer>().enabled = true;
+                    //recallOutline.GetComponent<SpriteRenderer>().enabled = true;
                 }
                 break;
         }
     }
 
-    public void UpdateLast()
+    void Update()
     {
-        transformRenderer = GetComponent<Transform>();
-        cont = GetComponent<PlayerPlatformerController>();
+        if(Time.timeSinceLevelLoad < timer)
+        {
+            
+            recallList.Enqueue(transformRenderer.position);
+            recallHealthList.Enqueue(cont.currentHealth);
 
-        print("Updateing last location and health");
-        lastLocation = transformRenderer.position;
-        lastHeath = cont.currentHealth;
+}
+        else
+        {
+            recallList.Enqueue(transformRenderer.position);
+            recallHealthList.Enqueue(cont.currentHealth);
+
+            lastLocation = (Vector3) recallList.Dequeue();
+            lastHeath = (int) recallHealthList.Dequeue();
+        }
+        RecallAbilityCheck();
+        
+        //print(lastLocation);
+
+        //print("Updateing last location and health");
+        
         recallOutline.GetComponent<Transform>().position = lastLocation;
     }
 
