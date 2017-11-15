@@ -1080,9 +1080,12 @@ Prefab:
 --- !u!1001 &1375281009
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1001 &291100791
 >>>>>>> 13faaee... Sector 2 Blacktilemap in progress
+=======
+>>>>>>> parent of 7658394... merp
 =======
 >>>>>>> parent of 7658394... merp
 =======
@@ -1249,9 +1252,12 @@ Prefab:
 --- !u!1001 &1422727245
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1001 &318671160
 >>>>>>> 13faaee... Sector 2 Blacktilemap in progress
+=======
+>>>>>>> parent of 7658394... merp
 =======
 >>>>>>> parent of 7658394... merp
 =======
@@ -1342,12 +1348,16 @@ Prefab:
       propertyPath: m_LocalScale.y
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 1.3296013
 >>>>>>> 13faaee... Sector 2 Blacktilemap in progress
       objectReference: {fileID: 0}
     - target: {fileID: 1282617275245366, guid: 608f936b33395de4988ff808829b6660, type: 2}
       propertyPath: m_Name
       value: platform (60)
+=======
+      value: 49.219734
+>>>>>>> parent of 7658394... merp
 =======
       value: 49.219734
 >>>>>>> parent of 7658394... merp
@@ -1531,6 +1541,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 1527561079}
 --- !u!1001 &1551915846
+<<<<<<< HEAD
+=======
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1585,16 +1597,6 @@ Prefab:
   m_ParentPrefab: {fileID: 100100000, guid: 608f936b33395de4988ff808829b6660, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1555798452
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  m_PrefabInternal: {fileID: 1435068725}
---- !u!1001 &2002493414
->>>>>>> 13faaee... Sector 2 Blacktilemap in progress
-=======
->>>>>>> parent of 7658394... merp
-=======
->>>>>>> parent of 7658394... merp
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1649,6 +1651,7 @@ Prefab:
   m_ParentPrefab: {fileID: 100100000, guid: 608f936b33395de4988ff808829b6660, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1556511886
+>>>>>>> parent of 7658394... merp
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1657,11 +1660,19 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
+      value: -21.8
+=======
       value: 0.5699997
+>>>>>>> parent of 7658394... merp
       objectReference: {fileID: 0}
     - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
+      value: 16.35
+=======
       value: 0.6499996
+>>>>>>> parent of 7658394... merp
       objectReference: {fileID: 0}
     - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1685,15 +1696,205 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 32.89004
+=======
       value: 0
+>>>>>>> parent of 7658394... merp
       objectReference: {fileID: 0}
     - target: {fileID: 1865883955987438, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
       propertyPath: m_Name
+<<<<<<< HEAD
+      value: platform (28)
+=======
       value: squareplatform (2)
+>>>>>>> parent of 7658394... merp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
+--- !u!1001 &1555798452
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  m_PrefabInternal: {fileID: 1435068725}
+--- !u!1001 &2002493414
+>>>>>>> 13faaee... Sector 2 Blacktilemap in progress
+=======
+>>>>>>> parent of 7658394... merp
+=======
+>>>>>>> parent of 7658394... merp
+=======
+--- !u!4 &1556511887 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca,
+    type: 2}
+  m_PrefabInternal: {fileID: 1556511886}
+--- !u!1001 &1563792106
+>>>>>>> parent of 7658394... merp
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
+      value: 24.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6.32
+=======
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 30.95
+>>>>>>> parent of 7658394... merp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.041245617
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282617275245366, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_Name
+      value: platform (12)
+=======
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282617275245366, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_Name
+      value: platform (19)
+>>>>>>> parent of 7658394... merp
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 608f936b33395de4988ff808829b6660, type: 2}
+  m_IsPrefabParent: 0
+<<<<<<< HEAD
+--- !u!1001 &1556511886
+=======
+--- !u!1001 &1576153335
+>>>>>>> parent of 7658394... merp
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+<<<<<<< HEAD
+    m_TransformParent: {fileID: 1527561080}
+=======
+    m_TransformParent: {fileID: 0}
+>>>>>>> parent of 7658394... merp
+    m_Modifications:
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
+      value: 0.5699997
+=======
+      value: 17
+>>>>>>> parent of 7658394... merp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
+      value: 0.6499996
+=======
+      value: 33.3
+>>>>>>> parent of 7658394... merp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.041245617
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_RootOrder
+      value: 33
+      objectReference: {fileID: 0}
+<<<<<<< HEAD
+    - target: {fileID: 1865883955987438, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_Name
+      value: squareplatform (2)
+=======
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 3.6467283
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.69661266
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282617275245366, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_Name
+      value: platform (25)
+>>>>>>> parent of 7658394... merp
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+  m_IsPrefabParent: 0
+<<<<<<< HEAD
 --- !u!4 &1556511887 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca,
@@ -1754,6 +1955,9 @@ Prefab:
   m_ParentPrefab: {fileID: 100100000, guid: 608f936b33395de4988ff808829b6660, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1576153335
+=======
+--- !u!1001 &1628841271
+>>>>>>> parent of 7658394... merp
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1762,11 +1966,19 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
       propertyPath: m_LocalPosition.y
       value: 33.3
+=======
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 33.7
+>>>>>>> parent of 7658394... merp
       objectReference: {fileID: 0}
     - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1790,6 +2002,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
@@ -1803,47 +2016,7 @@ Prefab:
     - target: {fileID: 1282617275245366, guid: 608f936b33395de4988ff808829b6660, type: 2}
       propertyPath: m_Name
       value: platform (25)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 608f936b33395de4988ff808829b6660, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1628841271
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 33.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.041245617
-      objectReference: {fileID: 0}
-    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
-      propertyPath: m_RootOrder
+=======
       value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
@@ -1852,6 +2025,86 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660, type: 2}
       propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282617275245366, guid: 608f936b33395de4988ff808829b6660, type: 2}
+      propertyPath: m_Name
+      value: platform (23)
+>>>>>>> parent of 7658394... merp
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 608f936b33395de4988ff808829b6660, type: 2}
+  m_IsPrefabParent: 0
+<<<<<<< HEAD
+--- !u!1001 &1628841271
+=======
+--- !u!1001 &1686482316
+>>>>>>> parent of 7658394... merp
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 229706818}
+    m_Modifications:
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
+      value: 25
+=======
+      value: 0.0060003386
+>>>>>>> parent of 7658394... merp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
+      value: 33.7
+=======
+      value: -0.8008321
+>>>>>>> parent of 7658394... merp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 31
+=======
+      value: 0
+>>>>>>> parent of 7658394... merp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865883955987438, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_Name
+      value: squareplatform (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalScale.x
+<<<<<<< HEAD
+      value: 5.5
+=======
+      value: 0.30003867
+>>>>>>> parent of 7658394... merp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
+      propertyPath: m_LocalScale.y
+<<<<<<< HEAD
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1282617275245366, guid: 608f936b33395de4988ff808829b6660, type: 2}
@@ -1899,6 +2152,9 @@ Prefab:
     - target: {fileID: 4167576391672064, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
       propertyPath: m_RootOrder
       value: 0
+=======
+      value: 1.2916669
+>>>>>>> parent of 7658394... merp
       objectReference: {fileID: 0}
     - target: {fileID: 1865883955987438, guid: 70585472d8c5ef042839db4e8f7bbfca, type: 2}
       propertyPath: m_Name
@@ -2039,6 +2295,7 @@ Prefab:
       value: 12.6
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       value: 27.04
       objectReference: {fileID: 0}
@@ -2046,6 +2303,8 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 32.4
 >>>>>>> 13faaee... Sector 2 Blacktilemap in progress
+=======
+>>>>>>> parent of 7658394... merp
 =======
 >>>>>>> parent of 7658394... merp
 =======
@@ -2193,9 +2452,12 @@ Prefab:
 --- !u!1001 &2040246529
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1001 &2094893314
 >>>>>>> 13faaee... Sector 2 Blacktilemap in progress
+=======
+>>>>>>> parent of 7658394... merp
 =======
 >>>>>>> parent of 7658394... merp
 =======
@@ -2564,9 +2826,12 @@ MonoBehaviour:
   target: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   target: {fileID: 1998849092}
 >>>>>>> 13faaee... Sector 2 Blacktilemap in progress
+=======
+>>>>>>> parent of 7658394... merp
 =======
 >>>>>>> parent of 7658394... merp
 =======
