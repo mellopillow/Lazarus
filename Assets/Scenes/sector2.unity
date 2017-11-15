@@ -1079,9 +1079,12 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!1001 &1375281009
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1001 &291100791
 >>>>>>> 13faaee... Sector 2 Blacktilemap in progress
+=======
+>>>>>>> parent of 7658394... merp
 =======
 >>>>>>> parent of 7658394... merp
 Prefab:
@@ -1245,9 +1248,12 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!1001 &1422727245
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1001 &318671160
 >>>>>>> 13faaee... Sector 2 Blacktilemap in progress
+=======
+>>>>>>> parent of 7658394... merp
 =======
 >>>>>>> parent of 7658394... merp
 Prefab:
@@ -1335,12 +1341,16 @@ Prefab:
     - target: {fileID: 4715052562581824, guid: 5dd3b060c091658458134b765f714934, type: 2}
       propertyPath: m_LocalScale.y
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 1.3296013
 >>>>>>> 13faaee... Sector 2 Blacktilemap in progress
       objectReference: {fileID: 0}
     - target: {fileID: 1282617275245366, guid: 608f936b33395de4988ff808829b6660, type: 2}
       propertyPath: m_Name
       value: platform (60)
+=======
+      value: 49.219734
+>>>>>>> parent of 7658394... merp
 =======
       value: 49.219734
 >>>>>>> parent of 7658394... merp
@@ -1576,10 +1586,13 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!1001 &1555798452
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   m_PrefabInternal: {fileID: 1435068725}
 --- !u!1001 &2002493414
 >>>>>>> 13faaee... Sector 2 Blacktilemap in progress
+=======
+>>>>>>> parent of 7658394... merp
 =======
 >>>>>>> parent of 7658394... merp
 Prefab:
@@ -2025,6 +2038,7 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 12.6
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       value: 27.04
       objectReference: {fileID: 0}
@@ -2032,6 +2046,8 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 32.4
 >>>>>>> 13faaee... Sector 2 Blacktilemap in progress
+=======
+>>>>>>> parent of 7658394... merp
 =======
 >>>>>>> parent of 7658394... merp
       objectReference: {fileID: 0}
@@ -2176,9 +2192,12 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!1001 &2040246529
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1001 &2094893314
 >>>>>>> 13faaee... Sector 2 Blacktilemap in progress
+=======
+>>>>>>> parent of 7658394... merp
 =======
 >>>>>>> parent of 7658394... merp
 Prefab:
@@ -2544,9 +2563,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   target: {fileID: 1998849092}
 >>>>>>> 13faaee... Sector 2 Blacktilemap in progress
+=======
+>>>>>>> parent of 7658394... merp
 =======
 >>>>>>> parent of 7658394... merp
   smoothSpeed: 10
