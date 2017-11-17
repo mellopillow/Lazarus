@@ -160,4 +160,5 @@ public class BasicEnemyAI : MonoBehaviour {
         {
             health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
         }
+    }
 }
