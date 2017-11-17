@@ -9,7 +9,6 @@ public class RecallAbility : PhysicsObject
     public float recallCooldownTimer;
     public float recallCooldown = 10f;
     public Vector3 lastLocation;
-    public int lastHeath;
     public Vector3 startLocation;
 
     private bool recalling;
@@ -20,7 +19,6 @@ public class RecallAbility : PhysicsObject
     private float timer = 3f;
     private GameObject recallOutline;
     private Queue recallList = new Queue();
-    private Queue recallHealthList = new Queue();
 
 
     void Awake()
@@ -45,7 +43,6 @@ public class RecallAbility : PhysicsObject
                 {
                     print("Recalling!");
                     transformRenderer.position = lastLocation;
-                    cont.currentHealth = lastHeath;
                     recallState = RecallState.Cooldown;
                     recallCooldownTimer = recallCooldown;
                     //recallOutline.GetComponent<SpriteRenderer>().enabled = false;
@@ -71,16 +68,13 @@ public class RecallAbility : PhysicsObject
         {
             
             recallList.Enqueue(transformRenderer.position);
-            recallHealthList.Enqueue(cont.currentHealth);
 
 }
         else
         {
             recallList.Enqueue(transformRenderer.position);
-            recallHealthList.Enqueue(cont.currentHealth);
 
             lastLocation = (Vector3) recallList.Dequeue();
-            lastHeath = (int) recallHealthList.Dequeue();
         }
         RecallAbilityCheck();
         

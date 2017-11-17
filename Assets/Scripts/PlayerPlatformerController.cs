@@ -5,19 +5,17 @@ using UnityEngine;
 public class PlayerPlatformerController : PhysicsObject {
     public float maxSpeed = 9;
     public float jumpTakeOffSpeed = 9;
-    
-    public int maxHealth = 5;
-    public int currentHealth = 5;
 
     public KeyCode rightMovement = KeyCode.D;
     public KeyCode leftMovement = KeyCode.A;
 
     protected int jumpCount = 0;
     
+    private bool spriteFlip = true; //true is facing right, false is facing left
+    
     private float damageTimer = 1f;
     private float invulnerability = 0f;
-    private bool tookDamage = false;
-    private bool spriteFlip = true; //true is facing right, false is facing left
+
     private LevelManager levelManager;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -26,8 +24,11 @@ public class PlayerPlatformerController : PhysicsObject {
     private GameObject trailTwo;
     private GameObject trailThree;
     private GameObject trailFour;
+    private Health health;
+
     // Use this for initialization
     void Awake () {
+        health = GetComponent<Health>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         isPlayerAttacking = GetComponent<Attack>();
         levelManager = GameObject.FindObjectOfType<LevelManager>();
@@ -57,31 +58,7 @@ public class PlayerPlatformerController : PhysicsObject {
             trailThree.GetComponent<TrailRenderer>().enabled = true;
             trailFour.GetComponent<TrailRenderer>().enabled = false;
         }
-        if (tookDamage)
-        {
-            if (invulnerability > 0f)
-            {
-                invulnerability -= Time.deltaTime;
-                if (spriteRenderer.enabled)
-                {
-                    spriteRenderer.enabled = false;
-                }
-                else
-                {
-                    spriteRenderer.enabled = true;
-                }
-
-
-            }
-            else
-            {
-                tookDamage = false;
-            }
-        }
-        if(!tookDamage && !spriteRenderer.enabled)
-        {
-            spriteRenderer.enabled = true;
-        }
+        
         Vector2 move = Vector2.zero;
         if (isPlayerAttacking.attacking)
         {
@@ -141,37 +118,28 @@ public class PlayerPlatformerController : PhysicsObject {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 12)
+        if(collision.gameObject.tag == "Damageable" || collision.gameObject.tag == "Enemy")
         {
-            if(tookDamage == false)
-            {
-                currentHealth--;
-                invulnerability = damageTimer;
-                tookDamage = true;
-            }
-            
-            if(currentHealth == 0)
-            {
-                levelManager.LoadLevel("Main");
-            }
-        }
-    }
+            health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == 12)
-        {
-            if (tookDamage == false)
+            if (invulnerability > 0f)
             {
-                currentHealth--;
-                invulnerability = damageTimer;
-                tookDamage = true;
+                invulnerability -= Time.deltaTime;
+                if (spriteRenderer.enabled)
+                {
+                    spriteRenderer.enabled = false;
+                }
+                else
+                {
+                    spriteRenderer.enabled = true;
+                }
+
             }
 
-            if (currentHealth == 0)
+            if(!spriteRenderer.enabled)
             {
-                levelManager.LoadLevel("Main");
+                spriteRenderer.enabled = true;
             }
-        }
+        }    
     }
 }
