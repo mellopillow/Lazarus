@@ -11,8 +11,8 @@ public class PlayerPlatformerController : PhysicsObject {
 
     protected int jumpCount = 0;
     
-    private bool spriteFlip = true; //true is facing right, false is facing left
-    
+    protected bool spriteFlip = true; //true is facing right, false is facing left
+    private bool tookDamage = false;
     private float damageTimer = 1f;
     private float invulnerability = 0f;
 
@@ -28,6 +28,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
     // Use this for initialization
     void Awake () {
+        
         health = GetComponent<Health>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         isPlayerAttacking = GetComponent<Attack>();
@@ -59,8 +60,30 @@ public class PlayerPlatformerController : PhysicsObject {
             trailFour.GetComponent<TrailRenderer>().enabled = false;
         }
         
+        if (tookDamage)
+        {
+            if(invulnerability > 0f)
+            {
+                invulnerability -= Time.deltaTime;
+                if (spriteRenderer.enabled)
+                {
+                    spriteRenderer.enabled = false;
+                }
+                else
+                {
+                    spriteRenderer.enabled = true;
+                }
+            }
+            else {
+                tookDamage = false;
+            }
+        }
+        if(!tookDamage && !spriteRenderer.enabled)
+        {
+            spriteRenderer.enabled = true;
+        }
         Vector2 move = Vector2.zero;
-        if (isPlayerAttacking.attacking)
+        if (isPlayerAttacking.attacking && grounded)
         {
             move.x = 0;
         }
@@ -71,7 +94,7 @@ public class PlayerPlatformerController : PhysicsObject {
         
         
 
-        if(velocity.y == 0 || (velocity.y > -0.00001 && velocity.y < 0.00001))
+        if((velocity.y == 0 || (velocity.y > -0.00001 && velocity.y < 0.00001)) && grounded)
         {
             jumpCount = 0;
             velocity.y = 0;
@@ -118,28 +141,32 @@ public class PlayerPlatformerController : PhysicsObject {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Damageable" || collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Damageable" || collision.gameObject.tag == "Enemy")
         {
-            health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
-
-            if (invulnerability > 0f)
+            if (!tookDamage)
             {
-                invulnerability -= Time.deltaTime;
-                if (spriteRenderer.enabled)
-                {
-                    spriteRenderer.enabled = false;
-                }
-                else
-                {
-                    spriteRenderer.enabled = true;
-                }
+                health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
+                invulnerability = damageTimer;
+                tookDamage = true;
+
 
             }
-
-            if(!spriteRenderer.enabled)
-            {
-                spriteRenderer.enabled = true;
-            }
-        }    
+        }  
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Damageable" || collision.gameObject.tag == "Enemy")
+        {
+            if (!tookDamage)
+            {
+                health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
+                invulnerability = damageTimer;
+                tookDamage = true;
+
+
+            }
+        }
+    }
+
 }
