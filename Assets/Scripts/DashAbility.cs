@@ -84,7 +84,6 @@ public class DashAbility : PhysicsObject
                 }
                 
                 dashTimer -= Time.deltaTime;
-                print(timeStorage);
                 if (dashTimer <= 0)
                 {
                     dashTimer = 0;

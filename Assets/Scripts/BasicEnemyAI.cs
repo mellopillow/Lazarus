@@ -15,7 +15,8 @@ public class BasicEnemyAI : MonoBehaviour {
     public bool shooting;
     public bool patrolling;
     public float attackRange;
-    public int damage;
+    public int touchDamage = 1;
+    public int bulletDamage = 1;
     private float lastAttackTime;
     public float attackDelay;
 
@@ -23,11 +24,15 @@ public class BasicEnemyAI : MonoBehaviour {
     public float projectileForce;
     public Transform raycastPoint;
     private bool right;
-
+    private Damage touchDamageScript;
+    private Health health;
     private Animator animator;
 
 	// Use this for initialization
 	void Start () {
+        health = GetComponent<Health>();
+        touchDamageScript = GetComponent<Damage>();
+        touchDamageScript.setDamage(touchDamage);
         currentPatrolIndex = 0;
         currentPatrolPoint = patrolPoints[currentPatrolIndex];
 	}
@@ -117,8 +122,8 @@ public class BasicEnemyAI : MonoBehaviour {
                 {
                     shooting = true; 
                     animator.SetBool("shooting", shooting);  
-                    print("hit");
                     GameObject newBullet = Instantiate(projectile, raycastPoint.position, transform.rotation);
+                    newBullet.GetComponent<Damage>().setDamage(bulletDamage);
                     
                     if (right)
                     {
@@ -145,6 +150,15 @@ public class BasicEnemyAI : MonoBehaviour {
         {
             shooting = false;
             animator.SetBool("shooting", shooting);  
+        }
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "PlayerAttack")
+        {
+            health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
         }
     }
 }

@@ -3,41 +3,95 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Attack : PhysicsObject {
+public class Attack : PlayerPlatformerController {
 
     public bool attacking = false;
-
-    private float attack = 0f;
-    private float attackCooldown = 0.3f;
-
+    public bool secondAttack = false;
     public Collider2D attackTriggerRight;
+    public Collider2D attackTriggerLeft;
 
+    private float attacks = 0f;
+    private float attackCooldown = .4f;
+    private bool sprite;
+    private Animator attackanimator;
+    
     void Awake()
     {
+        attackanimator = GetComponent<Animator>();
         attackTriggerRight.enabled = false;
+        attackTriggerLeft.enabled = false;
+        
     }
-
+    void FixedUpdate()
+    {
+        GameObject.Find("charAttTrigger").GetComponent<Transform>().position = GameObject.Find("char").GetComponent<Transform>().position;
+        
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C) && !attacking)
+        if (!attacking)
         {
-            print(SceneManager.sceneCount);
-            attacking = true;
-            attack = attackCooldown;
-
-            attackTriggerRight.enabled = true;
+            attackTriggerRight.enabled = false;
+            attackTriggerLeft.enabled = false;
         }
-        if(attacking)
+        if (attacks > 0f)
         {
-            if(attack > 0)
+            attacks -= Time.deltaTime;
+            Debug.Log(attacks);
+            if (Input.GetKeyDown(KeyCode.C) && !secondAttack)
             {
-                attack -= Time.deltaTime;
+                secondAttack = true;
+            }
+
+        }
+        else
+        {
+            secondAttack = false;
+        }
+        sprite = GameObject.Find("char").GetComponent<SpriteRenderer>().flipX;
+        attackanimator.SetBool("attacking", attacking);
+        attackanimator.SetBool("secondattack", secondAttack);
+        if (Input.GetKeyDown(KeyCode.C) && !attacking && !secondAttack)
+        {
+            attacks = attackCooldown;
+            attacking = true;
+            if(sprite)
+            {
+                attackTriggerLeft.enabled = true;
             }
             else
             {
-                attacking = false;
-                attackTriggerRight.enabled = false;
+                attackTriggerRight.enabled = true;
             }
+            
         }
+        
+        
     }
+    void Attacking()
+    {
+        if (!secondAttack)
+        {
+            attacking = false;
+        }
+        attackTriggerRight.enabled = false;
+        attackTriggerLeft.enabled = false;
+        
+    }
+    void SecondAttack()
+    {
+       
+            attacks = 0f;
+            if (sprite)
+            {
+                attackTriggerLeft.enabled = true;
+            }
+            else
+            {
+                attackTriggerRight.enabled = true;
+            }
+ 
+        secondAttack = false;
+    }
+    
 }
