@@ -6,16 +6,18 @@ using UnityEngine.SceneManagement;
 public class Attack : PlayerPlatformerController {
 
     public bool attacking = false;
-
-    private float attack = 0f;
-    private float attackCooldown = .5f;
-    private bool sprite;
-
+    public bool secondAttack = false;
     public Collider2D attackTriggerRight;
     public Collider2D attackTriggerLeft;
 
+    private float attacks = 0f;
+    private float attackCooldown = .4f;
+    private bool sprite;
+    private Animator attackanimator;
+    
     void Awake()
     {
+        attackanimator = GetComponent<Animator>();
         attackTriggerRight.enabled = false;
         attackTriggerLeft.enabled = false;
         
@@ -23,39 +25,75 @@ public class Attack : PlayerPlatformerController {
     void FixedUpdate()
     {
         GameObject.Find("charAttTrigger").GetComponent<Transform>().position = GameObject.Find("char").GetComponent<Transform>().position;
+        
     }
     void Update()
     {
-        sprite = GameObject.Find("char").GetComponent<SpriteRenderer>().flipX;
-        print(sprite);
-        if (Input.GetKeyDown(KeyCode.C) && !attacking && !sprite)
+        if (!attacking)
         {
-            
-            attacking = true;
-            attack = attackCooldown;
-
-            attackTriggerRight.enabled = true;
+            attackTriggerRight.enabled = false;
+            attackTriggerLeft.enabled = false;
         }
-        else if (Input.GetKeyDown(KeyCode.C) && !attacking && sprite)
+        if (attacks > 0f)
         {
-            
-            attacking = true;
-            attack = attackCooldown;
-
-            attackTriggerLeft.enabled = true;
-        }
-        if (attacking)
-        {
-            if(attack > 0)
+            attacks -= Time.deltaTime;
+            Debug.Log(attacks);
+            if (Input.GetKeyDown(KeyCode.C) && !secondAttack)
             {
-                attack -= Time.deltaTime;
+                secondAttack = true;
+            }
+
+        }
+        else
+        {
+            secondAttack = false;
+        }
+        sprite = GameObject.Find("char").GetComponent<SpriteRenderer>().flipX;
+        attackanimator.SetBool("attacking", attacking);
+        attackanimator.SetBool("secondattack", secondAttack);
+        if (Input.GetKeyDown(KeyCode.C) && !attacking && !secondAttack)
+        {
+            attacks = attackCooldown;
+            attacking = true;
+            if(sprite)
+            {
+                attackTriggerLeft.enabled = true;
             }
             else
             {
-                attacking = false;
-                attackTriggerRight.enabled = false;
-                attackTriggerLeft.enabled = false;
+                attackTriggerRight.enabled = true;
+            }
+            
+        }
+        
+        
+    }
+    void Attacking()
+    {
+        if (!secondAttack)
+        {
+            attacking = false;
+        }
+        
+        Debug.Log("hi");
+        
+        Debug.Log(attacking);
+    }
+    void SecondAttack()
+    {
+        if (secondAttack)
+        {
+            attacks = 0f;
+            if (sprite)
+            {
+                attackTriggerLeft.enabled = true;
+            }
+            else
+            {
+                attackTriggerRight.enabled = true;
             }
         }
+        secondAttack = false;
     }
+    
 }

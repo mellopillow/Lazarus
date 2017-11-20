@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerPlatformerController : PhysicsObject {
     public float maxSpeed = 9;
     public float jumpTakeOffSpeed = 9;
-
+    public bool movementKeyDown = false;
     public KeyCode rightMovement = KeyCode.D;
     public KeyCode leftMovement = KeyCode.A;
 
@@ -15,29 +15,28 @@ public class PlayerPlatformerController : PhysicsObject {
     private bool tookDamage = false;
     private float damageTimer = 1f;
     private float invulnerability = 0f;
+    public TrailRenderer trailOne;
+    public TrailRenderer trailTwo;
+    public TrailRenderer trailThree;
+    public TrailRenderer trailFour;
 
     private LevelManager levelManager;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private Attack isPlayerAttacking;
-    private GameObject trailOne;
-    private GameObject trailTwo;
-    private GameObject trailThree;
-    private GameObject trailFour;
+    
     private Health health;
+    private Attack attackz;
 
     // Use this for initialization
     void Awake () {
-        
+        attackz = GetComponent<Attack>();
         health = GetComponent<Health>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         isPlayerAttacking = GetComponent<Attack>();
         levelManager = GameObject.FindObjectOfType<LevelManager>();
         animator = GetComponent<Animator>();
-        trailOne = GameObject.Find("Trail1");
-        trailThree = GameObject.Find("Trail2");
-        trailTwo = GameObject.Find("TrailFlip1");
-        trailFour = GameObject.Find("TrailFlip2");
+        
     }
 
    
@@ -46,6 +45,7 @@ public class PlayerPlatformerController : PhysicsObject {
     {
         if (!spriteFlip)
         {
+            
             trailOne.GetComponent<TrailRenderer>().enabled = false;
             trailTwo.GetComponent<TrailRenderer>().enabled = true;
             trailThree.GetComponent<TrailRenderer>().enabled = false;
@@ -59,7 +59,8 @@ public class PlayerPlatformerController : PhysicsObject {
             trailThree.GetComponent<TrailRenderer>().enabled = true;
             trailFour.GetComponent<TrailRenderer>().enabled = false;
         }
-        
+        //Debug.Log(spriteFlip);
+        Debug.Log(trailOne.GetComponent<TrailRenderer>().enabled);
         if (tookDamage)
         {
             if(invulnerability > 0f)
@@ -118,7 +119,8 @@ public class PlayerPlatformerController : PhysicsObject {
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(rightMovement))
         {
-            if (!spriteFlip && !(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(leftMovement)))
+            movementKeyDown = true;
+            if (!spriteFlip && !(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(leftMovement)) && !attackz.attacking)
             {
                 spriteRenderer.flipX = !spriteRenderer.flipX;
                 spriteFlip = !spriteFlip;
@@ -126,18 +128,25 @@ public class PlayerPlatformerController : PhysicsObject {
         }
         else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(leftMovement))
         {
-            if(spriteFlip)
+            movementKeyDown = true;
+            if(spriteFlip && !attackz.attacking)
             {
                 spriteRenderer.flipX = !spriteRenderer.flipX;
                 spriteFlip = !spriteFlip;
             }
         }
+        else
+        {
+            movementKeyDown = false;
+        }
+        
         animator.SetBool("grounded", grounded);
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
-        
+        animator.SetBool("movementkeydown", movementKeyDown);
         targetVelocity = move * maxSpeed;
        
     }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -160,7 +169,14 @@ public class PlayerPlatformerController : PhysicsObject {
         {
             if (!tookDamage)
             {
-                health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
+                try
+                {
+                    health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
+                }
+                catch
+                {
+                    Debug.Log("No object");
+                }
                 invulnerability = damageTimer;
                 tookDamage = true;
 

@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour {
 
     void Awake()
     {
-        Debug.Log("Start");
+        //Debug.Log("Start");
         PlayMusicSource();
         //Check for AudioManager
         if (instance == null)
