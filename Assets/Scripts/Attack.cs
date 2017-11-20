@@ -74,15 +74,13 @@ public class Attack : PlayerPlatformerController {
         {
             attacking = false;
         }
+        attackTriggerRight.enabled = false;
+        attackTriggerLeft.enabled = false;
         
-        Debug.Log("hi");
-        
-        Debug.Log(attacking);
     }
     void SecondAttack()
     {
-        if (secondAttack)
-        {
+       
             attacks = 0f;
             if (sprite)
             {
@@ -92,7 +90,7 @@ public class Attack : PlayerPlatformerController {
             {
                 attackTriggerRight.enabled = true;
             }
-        }
+ 
         secondAttack = false;
     }
     
