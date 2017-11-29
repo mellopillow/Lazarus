@@ -5573,9 +5573,22 @@ Prefab:
       propertyPath: jumpTakeOffSpeed
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 9.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd7974252f51983428d905798ac49c72, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1435068726 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72,
+    type: 2}
+  m_PrefabInternal: {fileID: 1435068725}
 --- !u!4 &1459294428 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4245405294227484, guid: 608f936b33395de4988ff808829b6660,
@@ -7934,11 +7947,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28d18be6415c1ae45a3c3027ab1f8f04, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1998849092 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4820701186674094, guid: dd7974252f51983428d905798ac49c72,
-    type: 2}
-  m_PrefabInternal: {fileID: 1435068725}
 --- !u!1001 &2002493414
 Prefab:
   m_ObjectHideFlags: 0
@@ -9009,7 +9017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef63e0b07907747a3a0c75f5f26e59b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1998849092}
+  target: {fileID: 1435068726}
   smoothSpeed: 10
   offset: {x: 0, y: 0, z: -2}
   bounds: 0
