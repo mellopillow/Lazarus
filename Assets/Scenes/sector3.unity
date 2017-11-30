@@ -7268,11 +7268,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -29.8
+      value: 11.91
       objectReference: {fileID: 0}
     - target: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 71.3
+      value: 76
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd7974252f51983428d905798ac49c72, type: 2}
