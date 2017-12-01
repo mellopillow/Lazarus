@@ -60,7 +60,7 @@ public class PlayerPlatformerController : PhysicsObject {
             trailFour.GetComponent<TrailRenderer>().enabled = false;
         }
         //Debug.Log(spriteFlip);
-        Debug.Log(trailOne.GetComponent<TrailRenderer>().enabled);
+        //Debug.Log(trailOne.GetComponent<TrailRenderer>().enabled);
         if (tookDamage)
         {
             if(invulnerability > 0f)
