@@ -63,12 +63,15 @@ public class TurretAI : MonoBehaviour {
             Vector2 direction = target.transform.position - transform.position;
             direction.Normalize();
 
+            Vector3 newScale;
             if (!attackingRight)
             {
                 GameObject bulletClone;
                 bulletClone = Instantiate(bullet, shootPointLeft.transform.position, shootPointLeft.transform.rotation) as GameObject;
                 bulletClone.GetComponent<Rigidbody2D>().velocity = direction * projSpeed;
 
+                newScale = new Vector3(transform.localScale.x, 1, 1);
+                transform.localScale = newScale;
                 projTimer = 0;
             }
 
@@ -78,6 +81,8 @@ public class TurretAI : MonoBehaviour {
                 bulletClone = Instantiate(bullet, shootPointRight.transform.position, shootPointRight.transform.rotation) as GameObject;
                 bulletClone.GetComponent<Rigidbody2D>().velocity = direction * projSpeed;
 
+                newScale = new Vector3(-transform.localScale.x, 1, 1);
+                transform.localScale = newScale;
                 projTimer = 0;
             }
 
