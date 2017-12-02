@@ -590,104 +590,58 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72, type: 2}
+    - target: {fileID: 4200431068541116, guid: dd7974252f51983428d905798ac49c72, type: 2}
       propertyPath: m_LocalPosition.x
       value: -12.05
       objectReference: {fileID: 0}
-    - target: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72, type: 2}
+    - target: {fileID: 4200431068541116, guid: dd7974252f51983428d905798ac49c72, type: 2}
       propertyPath: m_LocalPosition.y
       value: 14.767
       objectReference: {fileID: 0}
-    - target: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72, type: 2}
+    - target: {fileID: 4200431068541116, guid: dd7974252f51983428d905798ac49c72, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72, type: 2}
+    - target: {fileID: 4200431068541116, guid: dd7974252f51983428d905798ac49c72, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72, type: 2}
+    - target: {fileID: 4200431068541116, guid: dd7974252f51983428d905798ac49c72, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72, type: 2}
+    - target: {fileID: 4200431068541116, guid: dd7974252f51983428d905798ac49c72, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72, type: 2}
+    - target: {fileID: 4200431068541116, guid: dd7974252f51983428d905798ac49c72, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72, type: 2}
+    - target: {fileID: 4200431068541116, guid: dd7974252f51983428d905798ac49c72, type: 2}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114158306808089556, guid: dd7974252f51983428d905798ac49c72,
+    - target: {fileID: 114524048469512356, guid: dd7974252f51983428d905798ac49c72,
         type: 2}
       propertyPath: attackTriggerRight
       value: 
       objectReference: {fileID: 1993537558}
-    - target: {fileID: 114158306808089556, guid: dd7974252f51983428d905798ac49c72,
+    - target: {fileID: 114524048469512356, guid: dd7974252f51983428d905798ac49c72,
         type: 2}
       propertyPath: attackTriggerLeft
       value: 
       objectReference: {fileID: 848240676}
-    - target: {fileID: 61817949541229810, guid: dd7974252f51983428d905798ac49c72,
+    - target: {fileID: 114524048469512356, guid: dd7974252f51983428d905798ac49c72,
         type: 2}
-      propertyPath: m_SpriteTilingProperty.border.x
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 61817949541229810, guid: dd7974252f51983428d905798ac49c72,
+      propertyPath: AttackTriggerRight
+      value: 
+      objectReference: {fileID: 1993537558}
+    - target: {fileID: 114524048469512356, guid: dd7974252f51983428d905798ac49c72,
         type: 2}
-      propertyPath: m_SpriteTilingProperty.border.y
-      value: 5.521739
-      objectReference: {fileID: 0}
-    - target: {fileID: 61817949541229810, guid: dd7974252f51983428d905798ac49c72,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.border.z
-      value: 16.913044
-      objectReference: {fileID: 0}
-    - target: {fileID: 61817949541229810, guid: dd7974252f51983428d905798ac49c72,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.border.w
-      value: 7.434783
-      objectReference: {fileID: 0}
-    - target: {fileID: 61817949541229810, guid: dd7974252f51983428d905798ac49c72,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.4229294
-      objectReference: {fileID: 0}
-    - target: {fileID: 61817949541229810, guid: dd7974252f51983428d905798ac49c72,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.4940264
-      objectReference: {fileID: 0}
-    - target: {fileID: 61817949541229810, guid: dd7974252f51983428d905798ac49c72,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 34.913044
-      objectReference: {fileID: 0}
-    - target: {fileID: 61817949541229810, guid: dd7974252f51983428d905798ac49c72,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 24.347826
-      objectReference: {fileID: 0}
-    - target: {fileID: 4925181474203098, guid: dd7974252f51983428d905798ac49c72, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 5.478
-      objectReference: {fileID: 0}
-    - target: {fileID: 4925181474203098, guid: dd7974252f51983428d905798ac49c72, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.288
-      objectReference: {fileID: 0}
-    - target: {fileID: 4645381602044264, guid: dd7974252f51983428d905798ac49c72, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4645381602044264, guid: dd7974252f51983428d905798ac49c72, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 5.663
-      objectReference: {fileID: 0}
+      propertyPath: AttackTriggerLeft
+      value: 
+      objectReference: {fileID: 848240676}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd7974252f51983428d905798ac49c72, type: 2}
   m_IsPrefabParent: 0
@@ -2004,7 +1958,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &1182577267 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4874158562537986, guid: dd7974252f51983428d905798ac49c72,
+  m_PrefabParentObject: {fileID: 4200431068541116, guid: dd7974252f51983428d905798ac49c72,
     type: 2}
   m_PrefabInternal: {fileID: 541536918}
 --- !u!1 &1255137816

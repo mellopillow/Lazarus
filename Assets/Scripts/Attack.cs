@@ -7,8 +7,8 @@ public class Attack : PlayerPlatformerController {
 
     public bool attacking = false;
     public bool secondAttack = false;
-    public Collider2D attackTriggerRight;
-    public Collider2D attackTriggerLeft;
+    public Collider2D AttackTriggerRight;
+    public Collider2D AttackTriggerLeft;
 
     private float attacks = 0f;
     private float attackCooldown = .26f;
@@ -20,8 +20,8 @@ public class Attack : PlayerPlatformerController {
     void Awake()
     {
         attackanimator = GetComponent<Animator>();
-        attackTriggerRight.enabled = false;
-        attackTriggerLeft.enabled = false;
+        AttackTriggerRight.enabled = false;
+        AttackTriggerLeft.enabled = false;
         
     }
     void FixedUpdate()
@@ -46,10 +46,17 @@ public class Attack : PlayerPlatformerController {
         {
             if (secondAttacks > 0f && !secondAttack && attacks <= .20f)
             {
-
                 secondAttack = true;
-                secondAttacks = 0f;
+                secondAttacks = .25f;
                 attackanimator.Play("SecondAttack");
+                if (sprite)
+                {
+                    AttackTriggerLeft.enabled = true;
+                }
+                else
+                {
+                    AttackTriggerRight.enabled = true;
+                }
                 Debug.Log("Second attack");
                 //Debug.Log(attacks);
             }
@@ -64,11 +71,11 @@ public class Attack : PlayerPlatformerController {
             
             if (sprite)
             {
-                attackTriggerLeft.enabled = true;
+                AttackTriggerLeft.enabled = true;
             }
             else
             {
-                attackTriggerRight.enabled = true;
+                AttackTriggerRight.enabled = true;
             }
 
         }
@@ -78,8 +85,8 @@ public class Attack : PlayerPlatformerController {
             if (!secondAttack)
             {
                 attacking = false;
-                attackTriggerRight.enabled = false;
-                attackTriggerLeft.enabled = false;
+                AttackTriggerRight.enabled = false;
+                AttackTriggerLeft.enabled = false;
             }
             
 
@@ -87,9 +94,8 @@ public class Attack : PlayerPlatformerController {
         if(secondAttacks <= 0f)
         {
             secondAttack = false;
-            attacking = false;
-            attackTriggerRight.enabled = false;
-            attackTriggerLeft.enabled = false;
+            AttackTriggerRight.enabled = false;
+            AttackTriggerLeft.enabled = false;
         }
         sprite = GameObject.Find("char").GetComponent<SpriteRenderer>().flipX;
         attackanimator.SetBool("attacking", attacking);

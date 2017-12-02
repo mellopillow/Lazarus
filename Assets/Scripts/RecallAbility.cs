@@ -28,7 +28,7 @@ public class RecallAbility : PhysicsObject
         animator = GetComponent<Animator>();
         recallOutline = GameObject.Find("RecallOutline");
         startLocation = transformRenderer.position;
-        recallOutline.GetComponent<SpriteRenderer>().enabled = false; // turn off the outline
+        //recallOutline.GetComponent<SpriteRenderer>().enabled = false; // turn off the outline
     }
 
     protected override void RecallAbilityCheck()
@@ -82,7 +82,7 @@ public class RecallAbility : PhysicsObject
 
         //print("Updateing last location and health");
         
-        recallOutline.GetComponent<Transform>().position = lastLocation;
+        //recallOutline.GetComponent<Transform>().position = lastLocation;
     }
 
 }
