@@ -627,8 +627,10 @@ MonoBehaviour:
   trailFour: {fileID: 96861753929027816}
   attacking: 0
   secondAttack: 0
-  attackTriggerRight: {fileID: 0}
-  attackTriggerLeft: {fileID: 0}
+  AttackTriggerRight: {fileID: 61099666002348320, guid: 909a34c42d87acc4d88a941e3175f8f7,
+    type: 2}
+  AttackTriggerLeft: {fileID: 61121200571790022, guid: 909a34c42d87acc4d88a941e3175f8f7,
+    type: 2}
 --- !u!114 &114529468716512238
 MonoBehaviour:
   m_ObjectHideFlags: 1
