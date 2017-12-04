@@ -115,4 +115,14 @@ public class AudioManager : MonoBehaviour {
     {
         sfxSource.PlayOneShot(sfx[1]);
     }
+
+    public void playattack1()
+    {
+        sfxSource.PlayOneShot(sfx[2]);
+    }
+
+    public void playattack2()
+    {
+        sfxSource.PlayOneShot(sfx[3]);
+    }
 }
