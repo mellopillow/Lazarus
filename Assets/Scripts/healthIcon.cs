@@ -5,14 +5,14 @@ using UnityEngine;
 public class healthIcon : MonoBehaviour {
     private Transform transformRenderer;
     private string tagname;
-    private Health health;
+    //private Health health;
     
 	// Use this for initialization
 	void Start () {
         transformRenderer = GetComponent<Transform>();
         tagname = transformRenderer.tag;
         Debug.Log(tagname);
-        health = GetComponent<Health>();
+        //health = GetComponent<Health>();
         
 
     }
@@ -24,9 +24,9 @@ public class healthIcon : MonoBehaviour {
 
     public void TurnOff()
     {
-        tagname = "health" + (health.currentHealth);
-        Debug.Log(tagname);
-        GameObject icon = GameObject.FindGameObjectWithTag(tagname);
-        icon.gameObject.SetActive(false);
+        //tagname = "health" + (health.currentHealth);
+        //Debug.Log(tagname);
+        //GameObject icon = GameObject.FindGameObjectWithTag(tagname);
+        transformRenderer.gameObject.SetActive(false);
     }
 }
