@@ -15,6 +15,7 @@ TagManager:
   - health3
   - health4
   - health5
+  - health0
   layers:
   - Default
   - TransparentFX
