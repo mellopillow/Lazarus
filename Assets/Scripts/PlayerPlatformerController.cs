@@ -150,13 +150,22 @@ public class PlayerPlatformerController : PhysicsObject {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print("on enter");
         if (collision.gameObject.tag == "Damageable" || collision.gameObject.tag == "Enemy")
         {
+            print(collision.gameObject.tag);
             if (!tookDamage)
             {
+                try
+                {
                 health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
                 invulnerability = damageTimer;
                 tookDamage = true;
+                }
+                catch
+                {
+                    print("i dont know man this is weird");
+                }
 
 
             }
@@ -165,6 +174,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        print("on stay");
         if (collision.gameObject.tag == "Damageable" || collision.gameObject.tag == "Enemy")
         {
             if (!tookDamage)

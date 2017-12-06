@@ -26,12 +26,14 @@ public class Attack : PlayerPlatformerController {
     }
     void FixedUpdate()
     {
-        GameObject.Find("charAttTrigger").GetComponent<Transform>().position = GameObject.Find("char").GetComponent<Transform>().position;
+        //GameObject.Find("charAttTrigger").GetComponent<Transform>().position = GameObject.Find("char").GetComponent<Transform>().position;
         
     }
     void Update()
     {
         if (attacks > 0f)
+        sprite = GameObject.Find("char").GetComponent<SpriteRenderer>().flipX;
+        if (Input.GetKeyDown(KeyCode.C) && !attacking && !sprite)
         {
             attacks -= Time.deltaTime;
             //Debug.Log(attacks);

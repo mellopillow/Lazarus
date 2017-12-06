@@ -10,6 +10,11 @@ TagManager:
   - Damageable
   - Enemy
   - PlayerAttack
+  - health1
+  - health2
+  - health3
+  - health4
+  - health5
   layers:
   - Default
   - TransparentFX
