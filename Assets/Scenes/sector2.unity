@@ -3900,17 +3900,17 @@ Prefab:
         type: 2}
       propertyPath: sfx.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: b07458f0786faea47b36e86aa975bbee, type: 3}
+      objectReference: {fileID: 8300000, guid: 1ce4abfe40d95cb49a7b4a607ad784c9, type: 3}
     - target: {fileID: 114230793583495716, guid: 62ad94f2e00c2e245ba6d45cdeedc0d2,
         type: 2}
       propertyPath: sfx.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 68fc70a26c25c7d449ef2894928e4fa8, type: 3}
+      objectReference: {fileID: 8300000, guid: cde601f61f9eff944a52a4e14dd13192, type: 3}
     - target: {fileID: 114230793583495716, guid: 62ad94f2e00c2e245ba6d45cdeedc0d2,
         type: 2}
       propertyPath: sfx.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 41df3861090c3f743b596da064b59847, type: 3}
+      objectReference: {fileID: 8300000, guid: 71958fb1b24177543b8a79ec070818c1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62ad94f2e00c2e245ba6d45cdeedc0d2, type: 2}
   m_IsPrefabParent: 0
