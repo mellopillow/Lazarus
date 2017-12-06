@@ -32,21 +32,24 @@ public class Attack : PlayerPlatformerController {
     void Update()
     {
         if (attacks > 0f)
-        sprite = GameObject.Find("char").GetComponent<SpriteRenderer>().flipX;
-        if (Input.GetKeyDown(KeyCode.C) && !attacking && !sprite)
-        {
-            attacks -= Time.deltaTime;
-            //Debug.Log(attacks);
-            
+        
+            //sprite = GameObject.Find("char").GetComponent<SpriteRenderer>().flipX;
+            //if (!attacking && !sprite)
+            {
+                attacks -= Time.deltaTime;
+                //Debug.Log(attacks);
 
-        }
+
+
+            }
+        
         if(secondAttacks > 0f)
         {
             secondAttacks -= Time.deltaTime;
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
-            if (secondAttacks > 0f && !secondAttack && attacks <= .20f)
+            if (secondAttacks > 0f && !secondAttack && attacks <= .15f)
             {
                 secondAttack = true;
                 secondAttacks = .25f;
