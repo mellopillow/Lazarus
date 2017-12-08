@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -55,24 +55,6 @@ public class lazorScript : MonoBehaviour {
 		    }
         }
 	}
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-        	print("Player entered lazor");
-        	playerInRange = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-        	//playerInRange = false;
-        	print("left");
-        }
-    }
 }
 
 public enum LazorState

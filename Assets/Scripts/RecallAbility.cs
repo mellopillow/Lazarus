@@ -13,12 +13,13 @@ public class RecallAbility : PhysicsObject
 
     private bool recalling;
     private Transform transformRenderer;
+    private Transform prepPosition;
     private SpriteRenderer spriteRenderer;
     private PlayerPlatformerController cont;
     private Animator animator;
     private float timer = 3f;
     private GameObject recallOutline;
-    private Queue recallList = new Queue();
+    //private Queue recallList = new Queue();
 
 
     void Awake()
@@ -41,11 +42,20 @@ public class RecallAbility : PhysicsObject
                 var isRecallKeyDown = Input.GetKeyDown(KeyCode.X);
                 if (isRecallKeyDown)
                 {
-                    print("Recalling!");
-                    transformRenderer.position = lastLocation;
-                    recallState = RecallState.Cooldown;
-                    recallCooldownTimer = recallCooldown;
+                    print("Recall prepped");
+                    prepPosition = lastLocation;
+                    recallState = RecallState.Prepped;
                     //recallOutline.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                break;
+
+            case RecallState.Prepped:
+                var isRecallKeyDown = Input.GetKeyDown(KeyCode.X);
+                if (isRecallKeyDown)
+                {
+                    print("Recalling!");
+                    transformRenderer = prepPosition;
+                    recallState = RecallState.Cooldown;
                 }
                 break;
 
@@ -67,14 +77,14 @@ public class RecallAbility : PhysicsObject
         if(Time.timeSinceLevelLoad < timer)
         {
             
-            recallList.Enqueue(transformRenderer.position);
+            //recallList.Enqueue(transformRenderer.position);
 
 }
         else
         {
-            recallList.Enqueue(transformRenderer.position);
+            //recallList.Enqueue(transformRenderer.position);
 
-            lastLocation = (Vector3) recallList.Dequeue();
+            lastLocation = transformRenderer;
         }
         RecallAbilityCheck();
         
@@ -90,5 +100,6 @@ public class RecallAbility : PhysicsObject
 public enum RecallState
 {
     Ready,
-    Cooldown
+    Cooldown,
+    Prepped
 }
