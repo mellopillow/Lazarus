@@ -16,6 +16,7 @@ public class EnemySpawner : MonoBehaviour {
     public static bool playedSFX = true;
     int randomHit = 1;
     
+	public GameObject deathParticle;
 
     void Spawn()
     {
@@ -112,6 +113,15 @@ public class EnemySpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		TimeSpawn ();
+
+		if (clone != null && clone.GetComponent<Health> ().dead) {
+			Instantiate (deathParticle, clone.transform.position, clone.transform.rotation);
+
+			Destroy (clone);
+			Destroy (deathParticle, 2f);
+
+			timer = 0;
+		}
 		/*
         spawnLocation = GameObject.FindGameObjectWithTag("Player").transform;
         //TriggerSpawn();

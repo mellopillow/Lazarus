@@ -12,12 +12,13 @@ public class FlyingEnemy_v2 : MonoBehaviour {
 	public LayerMask playerLayer;
 	public bool playerInRange;
 
+	private Health health;
 
 	bool attacking = false;
 	// Use this for initialization
 	void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
-
+		health = GetComponent<Health> ();
 	}
 	
 	// Update is called once per frame
@@ -50,5 +51,14 @@ public class FlyingEnemy_v2 : MonoBehaviour {
 
 		Gizmos.DrawSphere (transform.position, playerRange);
 
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if(collision.gameObject.tag == "PlayerAttack")
+		{
+			print ("Hit");
+			health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
+		}
 	}
 }
