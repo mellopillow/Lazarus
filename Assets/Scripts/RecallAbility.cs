@@ -38,8 +38,8 @@ public class RecallAbility : PhysicsObject
         spriteRenderer = GetComponent<SpriteRenderer>();
         switch (recallState)
         {
+            var isRecallKeyDown = Input.GetKeyDown(KeyCode.X);
             case RecallState.Ready:
-                var isRecallKeyDown = Input.GetKeyDown(KeyCode.X);
                 if (isRecallKeyDown)
                 {
                     print("Recall prepped");
@@ -50,7 +50,6 @@ public class RecallAbility : PhysicsObject
                 break;
 
             case RecallState.Prepped:
-                var isRecallKeyDown = Input.GetKeyDown(KeyCode.X);
                 if (isRecallKeyDown)
                 {
                     print("Recalling!");
