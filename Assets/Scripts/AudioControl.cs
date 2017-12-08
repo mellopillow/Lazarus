@@ -45,4 +45,8 @@ public class AudioControl : MonoBehaviour {
 	{
 		AudioManager.instance.soundfx(6);
 	}
+	public void playDamagedSound()
+	{
+		AudioManager.instance.soundfx(7);
+	}
 }
