@@ -24,6 +24,7 @@ public class PlayerPlatformerController : PhysicsObject {
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private Attack isPlayerAttacking;
+    private Transform transform;
     
     private Health health;
     private Attack attackz;
@@ -36,6 +37,7 @@ public class PlayerPlatformerController : PhysicsObject {
         isPlayerAttacking = GetComponent<Attack>();
         levelManager = GameObject.FindObjectOfType<LevelManager>();
         animator = GetComponent<Animator>();
+        transform = GetComponent<Transform>();
         
     }
 
@@ -122,7 +124,11 @@ public class PlayerPlatformerController : PhysicsObject {
             movementKeyDown = true;
             if (!spriteFlip && !(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(leftMovement)) && !attackz.attacking)
             {
-                spriteRenderer.flipX = !spriteRenderer.flipX;
+                //spriteRenderer.flipX = !spriteRenderer.flipX;
+                Vector3 theScale = transform.localScale;
+                theScale.x *= -1;
+                transform.localScale = theScale;
+
                 spriteFlip = !spriteFlip;
             }
         }
@@ -131,7 +137,10 @@ public class PlayerPlatformerController : PhysicsObject {
             movementKeyDown = true;
             if(spriteFlip && !attackz.attacking)
             {
-                spriteRenderer.flipX = !spriteRenderer.flipX;
+                //spriteRenderer.flipX = !spriteRenderer.flipX;
+                Vector3 theScale = transform.localScale;
+                theScale.x *= -1;
+                transform.localScale = theScale;
                 spriteFlip = !spriteFlip;
             }
         }
@@ -150,7 +159,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("on enter");
+        print("Getting hit");
         if (collision.gameObject.tag == "Damageable" || collision.gameObject.tag == "Enemy")
         {
             print(collision.gameObject.tag);
@@ -158,14 +167,17 @@ public class PlayerPlatformerController : PhysicsObject {
             {
                 try
                 {
+                    Debug.Log("Current health is: " + health.currentHealth);
                 health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
-                GameObject healthbar = GameObject.FindGameObjectWithTag("health" + health.currentHealth);
-                healthbar.GetComponent<healthIcon>().playAnimation();
                 invulnerability = damageTimer;
                 tookDamage = true;
+                GameObject healthbar = GameObject.FindGameObjectWithTag("health" + health.currentHealth);
+                healthbar.GetComponent<healthIcon>().playAnimation();
+                
                 }
                 catch
                 {
+                    
                     print("i dont know man this is weird");
                 }
 
@@ -183,7 +195,10 @@ public class PlayerPlatformerController : PhysicsObject {
             {
                 try
                 {
+                    Debug.Log("Current health is: " + health.currentHealth);
                     health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
+                    invulnerability = damageTimer;
+                    tookDamage = true;
                     GameObject healthbar = GameObject.FindGameObjectWithTag("health" + health.currentHealth);
                     healthbar.GetComponent<healthIcon>().playAnimation();
                 }
@@ -191,8 +206,7 @@ public class PlayerPlatformerController : PhysicsObject {
                 {
                     Debug.Log("No object");
                 }
-                invulnerability = damageTimer;
-                tookDamage = true;
+                
 
 
             }
