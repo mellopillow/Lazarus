@@ -4,7 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
-    private string levelName = "";
+	GameObject player;
+	private string levelName = "";
+	public GameObject spawn;
+	public GameObject deathParticle;
+	public float respawnDelay;
+
+	void Start(){
+		player = GameObject.FindGameObjectWithTag ("Player");
+	}
+
+
 	public void LoadLevel(string name)
     {
         levelName = name;
@@ -31,5 +41,24 @@ public class LevelManager : MonoBehaviour {
         Debug.Log("Quit Game");
         Application.Quit();
     }
+
+	public void RespawnPlayer(){
+		StartCoroutine ("RespawnPlayerCo");
+	}
+
+	public IEnumerator RespawnPlayerCo(){
+
+		Instantiate (deathParticle, player.transform.position, player.transform.rotation);
+		player.SetActive (false);
+		player.GetComponent<Renderer> ().enabled = false;
+
+		yield return new WaitForSeconds (respawnDelay);
+		player.transform.position = spawn.transform.position;
+		player.SetActive (true);
+
+		player.GetComponent<Health> ().currentHealth = player.GetComponent<Health> ().maxHealth;
+		player.GetComponent<Health> ().dead = false;
+
+	}
     
 }

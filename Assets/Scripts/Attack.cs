@@ -102,7 +102,7 @@ public class Attack : PlayerPlatformerController {
             //AttackTriggerRight.enabled = false;
             //AttackTriggerLeft.enabled = false;
         }
-        //sprite = GameObject.Find("char").GetComponent<SpriteRenderer>().flipX;
+		sprite = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().flipX;
         attackanimator.SetBool("attacking", attacking);
         attackanimator.SetBool("secondattack", secondAttack);
         

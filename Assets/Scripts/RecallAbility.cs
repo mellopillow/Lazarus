@@ -8,17 +8,18 @@ public class RecallAbility : PhysicsObject
     public RecallState recallState;
     public float recallCooldownTimer;
     public float recallCooldown = 10f;
-    public Vector3 lastLocation;
+	public Transform lastLocation; //changed it from vector3 to Transform
     public Vector3 startLocation;
 
     private bool recalling;
     private Transform transformRenderer;
+    private Transform prepPosition;
     private SpriteRenderer spriteRenderer;
     private PlayerPlatformerController cont;
     private Animator animator;
     private float timer = 3f;
     private GameObject recallOutline;
-    private Queue recallList = new Queue();
+    //private Queue recallList = new Queue();
 
 
     void Awake()
@@ -35,17 +36,26 @@ public class RecallAbility : PhysicsObject
     {
         cont = GetComponent<PlayerPlatformerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+		var isRecallKeyDown = Input.GetKeyDown(KeyCode.X); // this was inside the switch
         switch (recallState)
         {
+            
             case RecallState.Ready:
-                var isRecallKeyDown = Input.GetKeyDown(KeyCode.X);
+                if (isRecallKeyDown)
+                {
+                    print("Recall prepped");
+					prepPosition = lastLocation;
+                    recallState = RecallState.Prepped;
+                    //recallOutline.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                break;
+
+            case RecallState.Prepped:
                 if (isRecallKeyDown)
                 {
                     print("Recalling!");
-                    transformRenderer.position = lastLocation;
+                    transformRenderer = prepPosition;
                     recallState = RecallState.Cooldown;
-                    recallCooldownTimer = recallCooldown;
-                    //recallOutline.GetComponent<SpriteRenderer>().enabled = false;
                 }
                 break;
 
@@ -67,14 +77,14 @@ public class RecallAbility : PhysicsObject
         if(Time.timeSinceLevelLoad < timer)
         {
             
-            recallList.Enqueue(transformRenderer.position);
+            //recallList.Enqueue(transformRenderer.position);
 
 }
         else
         {
-            recallList.Enqueue(transformRenderer.position);
+            //recallList.Enqueue(transformRenderer.position);
 
-            lastLocation = (Vector3) recallList.Dequeue();
+            lastLocation = transformRenderer;
         }
         RecallAbilityCheck();
         
@@ -90,5 +100,6 @@ public class RecallAbility : PhysicsObject
 public enum RecallState
 {
     Ready,
-    Cooldown
+    Cooldown,
+    Prepped
 }
