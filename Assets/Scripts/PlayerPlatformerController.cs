@@ -28,6 +28,7 @@ public class PlayerPlatformerController : PhysicsObject {
     private Health health;
     private Attack attackz;
 
+
     // Use this for initialization
     void Awake () {
         attackz = GetComponent<Attack>();
@@ -39,7 +40,6 @@ public class PlayerPlatformerController : PhysicsObject {
         
     }
 
-   
     // Update is called once per frame
     protected override void ComputeVelocity()
     {
@@ -151,6 +151,9 @@ public class PlayerPlatformerController : PhysicsObject {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         print("on enter");
+
+
+
         if (collision.gameObject.tag == "Damageable" || collision.gameObject.tag == "Enemy")
         {
             print(collision.gameObject.tag);
@@ -172,6 +175,10 @@ public class PlayerPlatformerController : PhysicsObject {
 
             }
         }  
+
+		if (health.dead) {
+			levelManager.RespawnPlayer ();
+		}
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -197,6 +204,10 @@ public class PlayerPlatformerController : PhysicsObject {
 
             }
         }
+
+		if (health.dead) {
+			levelManager.RespawnPlayer ();
+		}
     }
 
 }

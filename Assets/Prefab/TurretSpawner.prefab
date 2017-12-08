@@ -9,53 +9,53 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1648137941704442}
+  m_RootGameObject: {fileID: 1557805942971764}
   m_IsPrefabParent: 1
---- !u!1 &1648137941704442
+--- !u!1 &1557805942971764
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4448230607844636}
-  - component: {fileID: 114130373160786384}
+  - component: {fileID: 4364347592974364}
+  - component: {fileID: 114907922268697878}
   m_Layer: 0
-  m_Name: FlyingEnemySpawner
-  m_TagString: FlyingEnemySpawn
+  m_Name: TurretSpawner
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4448230607844636
+--- !u!4 &4364347592974364
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1648137941704442}
+  m_GameObject: {fileID: 1557805942971764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.53, y: 5.86, z: -0.017578125}
+  m_LocalPosition: {x: -11.636012, y: 3.9473102, z: 0.010827715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114130373160786384
+--- !u!114 &114907922268697878
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1648137941704442}
+  m_GameObject: {fileID: 1557805942971764}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65ae7a39034d04d6e91f4f6e2d8142d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1856269394021166, guid: 452338a194a374e4a9d1ee4c5c550c63, type: 2}
+  enemy: {fileID: 0}
   spawnManager: {fileID: 0}
   spawnDistance: 5
   distanceFromTrigger: 2
   triggerLocations: []
   clip: {fileID: 0}
-  deathParticle: {fileID: 1905433841259606, guid: e647f1f8a59e949d2bf06ca1d6aaa235,
+  deathParticle: {fileID: 1593653419317942, guid: 2fea340c2dbe04042ab7cb08f6e01deb,
     type: 2}

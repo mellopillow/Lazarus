@@ -175,6 +175,8 @@ public class BasicEnemyAI : MonoBehaviour {
     {
         if(collision.gameObject.tag == "PlayerAttack")
         {
+			print ("Hit");
+
             health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
         }
     }
