@@ -314,14 +314,14 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 1
-    functionName: TurnOff
+    functionName: playDamagedSound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.0166667
-    functionName: playDamagedSound
+  - time: 1
+    functionName: TurnOff
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
