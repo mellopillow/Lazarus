@@ -4062,7 +4062,7 @@ Prefab:
         type: 2}
       propertyPath: sfx.Array.data[5]
       value: 
-      objectReference: {fileID: 8300000, guid: 689cb9221c2de3740bd27c15e57d2054, type: 3}
+      objectReference: {fileID: 8300000, guid: 758ec095a34a44149a86ef432aa41bd8, type: 3}
     - target: {fileID: 114230793583495716, guid: 62ad94f2e00c2e245ba6d45cdeedc0d2,
         type: 2}
       propertyPath: sfx.Array.data[6]
