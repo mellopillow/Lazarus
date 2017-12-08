@@ -28,11 +28,28 @@ public class BasicEnemyAI : MonoBehaviour {
     private Health health;
     private Animator animator;
 
+	GameObject patrolPointLeft, patrolPointRight;
+
 	// Use this for initialization
 	void Start () {
+		target = GameObject.FindGameObjectWithTag ("Player").transform;
+
         health = GetComponent<Health>();
         touchDamageScript = GetComponent<Damage>();
         touchDamageScript.setDamage(touchDamage);
+
+		Vector3 temp = new Vector3 (transform.position.x - 2f, transform.position.y, transform.position.z);
+		Vector3 temp1 = new Vector3 (transform.position.x + 3f, transform.position.y, transform.position.z);
+
+		patrolPointLeft = new GameObject ();
+		patrolPointRight = new GameObject ();
+
+		patrolPointLeft.transform.position = temp;
+		patrolPointRight.transform.position = temp1;
+
+		patrolPoints [0] = patrolPointLeft.transform;
+		patrolPoints [1] = patrolPointRight.transform;
+
         currentPatrolIndex = 0;
         currentPatrolPoint = patrolPoints[currentPatrolIndex];
 	}
@@ -42,7 +59,7 @@ public class BasicEnemyAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Patrolling
-        if (Vector3.Distance(transform.position, currentPatrolPoint.position) < 1f)
+		if (Vector3.Distance(transform.position, currentPatrolPoint.position) < 1f)
         {
             if (currentPatrolIndex + 1 < patrolPoints.Length)
             {
