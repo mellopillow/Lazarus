@@ -16,9 +16,11 @@ public class DashAbility : PhysicsObject
     private SpriteRenderer spriteRenderer;
     private PlayerPlatformerController cont;
     private Animator animator;
+    private Transform trans;
     void Awake()
     {
         animator = GetComponent<Animator>();
+        trans = GetComponent<Transform>();
     }
     protected override void DashAbilityCheck()
     {
@@ -35,7 +37,7 @@ public class DashAbility : PhysicsObject
                     rb2d = GetComponent<Rigidbody2D>();
                    
                     gravityController = 0;
-                    if (spriteRenderer.flipX)
+                    if (trans.localScale.x < 0)
                     {
                         rb2d.velocity = new Vector2(rb2d.velocity.x - 30f, 0);
                     }

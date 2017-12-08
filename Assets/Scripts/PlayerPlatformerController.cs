@@ -24,7 +24,7 @@ public class PlayerPlatformerController : PhysicsObject {
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private Attack isPlayerAttacking;
-    private Transform transform;
+    private Transform trans;
     
     private Health health;
     private Attack attackz;
@@ -38,7 +38,7 @@ public class PlayerPlatformerController : PhysicsObject {
         isPlayerAttacking = GetComponent<Attack>();
         levelManager = GameObject.FindObjectOfType<LevelManager>();
         animator = GetComponent<Animator>();
-        transform = GetComponent<Transform>();
+        trans = GetComponent<Transform>();
         
     }
 
@@ -125,9 +125,9 @@ public class PlayerPlatformerController : PhysicsObject {
             if (!spriteFlip && !(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(leftMovement)) && !attackz.attacking)
             {
                 //spriteRenderer.flipX = !spriteRenderer.flipX;
-                Vector3 theScale = transform.localScale;
+                Vector3 theScale = trans.localScale;
                 theScale.x *= -1;
-                transform.localScale = theScale;
+                trans.localScale = theScale;
 
                 spriteFlip = !spriteFlip;
             }
@@ -138,9 +138,9 @@ public class PlayerPlatformerController : PhysicsObject {
             if(spriteFlip && !attackz.attacking)
             {
                 //spriteRenderer.flipX = !spriteRenderer.flipX;
-                Vector3 theScale = transform.localScale;
+                Vector3 theScale = trans.localScale;
                 theScale.x *= -1;
-                transform.localScale = theScale;
+                trans.localScale = theScale;
                 spriteFlip = !spriteFlip;
             }
         }
