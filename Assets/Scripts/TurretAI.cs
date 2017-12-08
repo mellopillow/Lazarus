@@ -16,9 +16,13 @@ public class TurretAI : MonoBehaviour {
     public Transform target;
     public Transform shootPointLeft, shootPointRight;
 
+	private Health health;
+
 	// Use this for initialization
 	void Start () {
-		
+
+		target = GameObject.FindGameObjectWithTag ("Player").transform;
+		health = GetComponent<Health> ();
 	}
 	
 	// Update is called once per frame
@@ -70,7 +74,7 @@ public class TurretAI : MonoBehaviour {
                 bulletClone = Instantiate(bullet, shootPointLeft.transform.position, shootPointLeft.transform.rotation) as GameObject;
                 bulletClone.GetComponent<Rigidbody2D>().velocity = direction * projSpeed;
 
-                newScale = new Vector3(transform.localScale.x, 1, 1);
+				newScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
                 transform.localScale = newScale;
                 projTimer = 0;
             }
@@ -81,7 +85,7 @@ public class TurretAI : MonoBehaviour {
                 bulletClone = Instantiate(bullet, shootPointRight.transform.position, shootPointRight.transform.rotation) as GameObject;
                 bulletClone.GetComponent<Rigidbody2D>().velocity = direction * projSpeed;
 
-                newScale = new Vector3(-transform.localScale.x, 1, 1);
+				newScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
                 transform.localScale = newScale;
                 projTimer = 0;
             }
@@ -90,4 +94,12 @@ public class TurretAI : MonoBehaviour {
         }
 
     }
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if(collision.gameObject.tag == "PlayerAttack")
+		{
+			health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
+		}
+	}
 }

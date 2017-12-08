@@ -159,6 +159,8 @@ public class PlayerPlatformerController : PhysicsObject {
                 try
                 {
                 health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
+                GameObject healthbar = GameObject.FindGameObjectWithTag("health" + health.currentHealth);
+                healthbar.GetComponent<healthIcon>().playAnimation();
                 invulnerability = damageTimer;
                 tookDamage = true;
                 }
@@ -182,6 +184,8 @@ public class PlayerPlatformerController : PhysicsObject {
                 try
                 {
                     health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
+                    GameObject healthbar = GameObject.FindGameObjectWithTag("health" + health.currentHealth);
+                    healthbar.GetComponent<healthIcon>().playAnimation();
                 }
                 catch
                 {

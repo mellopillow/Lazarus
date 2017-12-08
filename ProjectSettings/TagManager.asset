@@ -15,6 +15,10 @@ TagManager:
   - health3
   - health4
   - health5
+  - health0
+  - ScientistSpawn
+  - FlyingEnemySpawn
+  - TurretSpawn
   layers:
   - Default
   - TransparentFX

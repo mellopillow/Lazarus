@@ -5,6 +5,7 @@ using UnityEngine;
 public class healthIcon : MonoBehaviour {
     private Transform transformRenderer;
     private string tagname;
+    private Animation anim;
     //private Health health;
     
 	// Use this for initialization
@@ -12,6 +13,7 @@ public class healthIcon : MonoBehaviour {
         transformRenderer = GetComponent<Transform>();
         tagname = transformRenderer.tag;
         Debug.Log(tagname);
+        anim = GetComponent<Animation>();
         //health = GetComponent<Health>();
         
 
@@ -28,5 +30,10 @@ public class healthIcon : MonoBehaviour {
         //Debug.Log(tagname);
         //GameObject icon = GameObject.FindGameObjectWithTag(tagname);
         transformRenderer.gameObject.SetActive(false);
+    }
+
+    public void playAnimation()
+    {
+        anim.Play();
     }
 }
