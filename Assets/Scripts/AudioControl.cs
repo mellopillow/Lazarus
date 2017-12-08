@@ -29,4 +29,20 @@ public class AudioControl : MonoBehaviour {
     {
         AudioManager.instance.PlayTheme();
     }
+	public void playSlashattack1()
+	{
+		AudioManager.instance.soundfx(3);
+	}
+	public void playSlashattack2()
+	{
+		AudioManager.instance.soundfx(4);
+	}
+	public void playGunFire()
+	{
+		AudioManager.instance.soundfx(5);
+	}
+	public void playJump()
+	{
+		AudioManager.instance.soundfx(6);
+	}
 }

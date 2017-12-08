@@ -8,7 +8,7 @@ public class RecallAbility : PhysicsObject
     public RecallState recallState;
     public float recallCooldownTimer;
     public float recallCooldown = 10f;
-    public Vector3 lastLocation;
+	public Transform lastLocation; //changed it from vector3 to Transform
     public Vector3 startLocation;
 
     private bool recalling;
@@ -36,14 +36,15 @@ public class RecallAbility : PhysicsObject
     {
         cont = GetComponent<PlayerPlatformerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+		var isRecallKeyDown = Input.GetKeyDown(KeyCode.X); // this was inside the switch
         switch (recallState)
         {
-            var isRecallKeyDown = Input.GetKeyDown(KeyCode.X);
+            
             case RecallState.Ready:
                 if (isRecallKeyDown)
                 {
                     print("Recall prepped");
-                    prepPosition = lastLocation;
+					prepPosition = lastLocation;
                     recallState = RecallState.Prepped;
                     //recallOutline.GetComponent<SpriteRenderer>().enabled = false;
                 }
