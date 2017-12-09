@@ -126,9 +126,9 @@ public class AudioManager : MonoBehaviour {
         sfxSource.PlayOneShot(sfx[3]);
     }
 
-	public void soundfx(int pick)
+	public void soundfx(int pick,float vol)
 	{
-		sfxSource.PlayOneShot(sfx[pick]);
+		sfxSource.PlayOneShot(sfx[pick], vol);
 	}
 
 }
