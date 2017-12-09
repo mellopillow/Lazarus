@@ -6,7 +6,6 @@ public class Damage : MonoBehaviour {
 	public int damage;
 
 	public void Awake(){
-		damage = 1;	
 	}	
     public void setDamage(int amount)
     {
