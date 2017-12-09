@@ -73,7 +73,8 @@ public class TurretAI : MonoBehaviour {
             {
                 GameObject bulletClone;
                 bulletClone = Instantiate(bullet, shootPointLeft.transform.position, shootPointLeft.transform.rotation) as GameObject;
-                bulletClone.GetComponent<Rigidbody2D>().velocity = direction * projSpeed;
+				bulletClone.GetComponent<Damage> ().setDamage (GetComponent<Damage> ().damage);
+				bulletClone.GetComponent<Rigidbody2D>().velocity = direction * projSpeed;
 
 				newScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
                 transform.localScale = newScale;
@@ -84,7 +85,8 @@ public class TurretAI : MonoBehaviour {
             {
                 GameObject bulletClone;
                 bulletClone = Instantiate(bullet, shootPointRight.transform.position, shootPointRight.transform.rotation) as GameObject;
-                bulletClone.GetComponent<Rigidbody2D>().velocity = direction * projSpeed;
+				bulletClone.GetComponent<Damage> ().setDamage (GetComponent<Damage> ().damage);
+				bulletClone.GetComponent<Rigidbody2D>().velocity = direction * projSpeed;
 
 				newScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
                 transform.localScale = newScale;
@@ -98,11 +100,13 @@ public class TurretAI : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if(collision.gameObject.tag == "PlayerAttack")
-		{
+		Debug.Log ("Test");
+		if (collision.gameObject.tag == "PlayerAttack") {
 			print ("hit by PlayerAttack");
-			health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
+			health.takeDamage (collision.gameObject.GetComponent<Damage> ().damage);
 
+		} else {
+			print ("wtf");
 		}
 	}
 }

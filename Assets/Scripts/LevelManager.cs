@@ -49,13 +49,12 @@ public class LevelManager : MonoBehaviour {
 	public IEnumerator RespawnPlayerCo(){
 
 		Instantiate (deathParticle, player.transform.position, player.transform.rotation);
+		AudioManager.instance.soundfx (8, 0.9f);
 		player.SetActive (false);
 		player.GetComponent<Renderer> ().enabled = false;
-
 		yield return new WaitForSeconds (respawnDelay);
 		player.transform.position = spawn.transform.position;
 		player.SetActive (true);
-
 		player.GetComponent<Health> ().currentHealth = player.GetComponent<Health> ().maxHealth;
 		player.GetComponent<Health> ().dead = false;
 

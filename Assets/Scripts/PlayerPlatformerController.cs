@@ -110,6 +110,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
         if((velocity.y == 0 || (velocity.y > -0.00001 && velocity.y < 0.00001)) && grounded)
         {
+            
             jumpCount = 0;
             velocity.y = 0;
         }
@@ -118,6 +119,10 @@ public class PlayerPlatformerController : PhysicsObject {
         if (Input.GetButtonDown("Jump") && jumpCount < 2)
         {
             gravityController = 1f;
+            if(jumpCount == 1)
+            {
+                animator.Play("DoubleJumpAnimation");
+            }
             jumpCount++;
             velocity.y = jumpTakeOffSpeed;
             
@@ -189,7 +194,7 @@ public class PlayerPlatformerController : PhysicsObject {
                 catch
                 {
                     
-                    print("i dont know man this is weird");
+                    //print("i dont know man this is weird");
                 }
 
 
