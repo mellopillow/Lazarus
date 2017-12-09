@@ -112,7 +112,9 @@ public class EnemySpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		TimeSpawn ();
+		if (this.CompareTag ("TurretSpawn")) {
+			TimeSpawn ();
+		}
 
 		if (clone != null && clone.GetComponent<Health> ().dead) {
 			Instantiate (deathParticle, clone.transform.position, clone.transform.rotation);

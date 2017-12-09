@@ -6,7 +6,11 @@ public class Health : MonoBehaviour {
 
     public int maxHealth;
     public int currentHealth;
-    public bool dead = false;
+    public bool dead;
+
+	void Start(){
+		dead = false;
+	}
 
 	public void takeDamage(int damageDone)
 	{

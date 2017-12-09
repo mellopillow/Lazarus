@@ -34,6 +34,11 @@ public class PlayerPlatformerController : PhysicsObject {
     void Awake () {
         attackz = GetComponent<Attack>();
         health = GetComponent<Health>();
+
+		if (health != null) {
+			print ("health is not null");
+		}
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         isPlayerAttacking = GetComponent<Attack>();
         levelManager = GameObject.FindObjectOfType<LevelManager>();
@@ -42,10 +47,16 @@ public class PlayerPlatformerController : PhysicsObject {
         
     }
 
+
+
     // Update is called once per frame
     protected override void ComputeVelocity()
     {
-        if (trans.localPosition.x > 0)
+		if (health.dead) {
+			levelManager.RespawnPlayer ();
+		}
+
+        if (!spriteFlip)
         {
             
             trailOne.GetComponent<TrailRenderer>().enabled = false;
@@ -184,10 +195,11 @@ public class PlayerPlatformerController : PhysicsObject {
 
             }
         }  
-
-		if (health.getDead()) {
+		/*
+		if (health.dead) {
 			levelManager.RespawnPlayer ();
 		}
+		*/
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -215,10 +227,11 @@ public class PlayerPlatformerController : PhysicsObject {
 
             }
         }
-
-		if (health.getDead()) {
+		/*
+		if (health.dead) {
 			levelManager.RespawnPlayer ();
 		}
+		*/
     }
 
 }
