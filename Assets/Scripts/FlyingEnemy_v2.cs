@@ -54,11 +54,17 @@ public class FlyingEnemy_v2 : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+<<<<<<< HEAD
 		Debug.Log ("Trigger Detected");
 		if(collision.gameObject.tag == "PlayerAttack")
+=======
+        Debug.Log("CHECK");
+        if (collision.gameObject.tag == "PlayerAttack")
+>>>>>>> master
 		{
 			print ("Hit");
-			health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
+            
+            health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
 		}
 	}
 }

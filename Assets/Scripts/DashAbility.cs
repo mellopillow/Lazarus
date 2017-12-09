@@ -52,6 +52,7 @@ public class DashAbility : PhysicsObject
                 
                 break;
             case DashState.Dashing:
+                animator.Play("DashAnimation");
                 transformRenderer = GetComponent<Transform>();
                 transformRenderer.rotation = Quaternion.Euler(0, 0, 0);
                 dashTimer += Time.deltaTime * 200;
