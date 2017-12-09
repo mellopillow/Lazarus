@@ -104,6 +104,8 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		spawnManager = GameObject.Find ("SpawnManager").GetComponent<SpawnManager> ();
 		Spawn ();
 		timer = 0;
         spawned = true;
