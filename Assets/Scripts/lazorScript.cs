@@ -6,59 +6,70 @@ public class lazorScript : MonoBehaviour {
 
     public LazorState lazorState;
 
-	public float beamDelayMax= 3f;
+	public float beamDelayMax= 4f;
 	public float beamDelay;
-	public float beamDamage;
 
-	public bool playerInRange;
+	public float beamOffing = .25f;
+	public float beamOff;
 	public bool beamFiring;
+
+    public SpriteRenderer sprite;
+    public Collider2D lazerRange;
+    public Damage damage;
 
 	// Use this for initialization
 	void Start () 
 	{
-		beamFiring = false;
-		playerInRange = false;
+		sprite = GetComponent<SpriteRenderer>();
+		lazerRange = GetComponent<Collider2D>();
+		damage = GetComponent<Damage>();
+		lazorState = LazorState.Dormant;
 	}
-	
-	// Update is called once per frame
-	void Update () 
+
+	public void fireBeam()
 	{
-		fireBeam();
-	}
+	    switch (lazorState)
+	    {
+	        case LazorState.Ready:
+	        	lazerRange.enabled = false;
+	            lazorState = LazorState.Firing;
+	            beamFiring = true;
+	            beamDelay = beamDelayMax;
+	            break;
 
-	void fireBeam()
-	{
-		if (playerInRange)
-		{
-	        switch (lazorState)
-	        {
-		        case LazorState.Ready:
-		            print("firing!");
-		            lazorState = LazorState.Firing;
-		            beamFiring = true;
-		            beamDelay = beamDelayMax;
-		            break;
+	        case LazorState.Firing:
+	            beamDelay -= Time.deltaTime;
+	        	sprite.enabled = true;
+	        	
+	            if (beamDelay <= 0)
+	            {
 
-		        case LazorState.Firing:
+	              	lazerRange.enabled = true;
+	              	sprite.enabled = false;
+	                beamDelay = 0;
 
-		            beamDelay -= Time.deltaTime;
-		            if (beamDelay <= 0)
-		            {
-		              	print("Dealing damage to everything in my range!");
-		                beamDelay = 0;
-		                lazorState = LazorState.Ready;
-		                
-		                playerInRange = false;
-		                beamFiring = false;
-		            }
-		            break;
-		    }
-        }
-	}
+	                lazorState = LazorState.Off;
+	                beamFiring = false;
+	                beamOff = beamOffing;
+	            }
+	            break;
+
+	        case LazorState.Off:
+	        	beamOff -= Time.deltaTime;
+	        	if (beamOff <= 0)
+	        	{
+	        		lazerRange.enabled = false;
+	        		lazorState = LazorState.Dormant;
+	        	}
+	        	break;
+		}
+    }
 }
 
 public enum LazorState
 {
     Ready,
-    Firing
+    Firing,
+    Dormant,
+    Off
 }
