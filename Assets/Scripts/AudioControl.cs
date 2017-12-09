@@ -41,7 +41,7 @@ public class AudioControl : MonoBehaviour {
 	{
 		AudioManager.instance.soundfx(5,.3f);
 	}
-	public void playJump()
+	public void playDash()
 	{
 		AudioManager.instance.soundfx(6,.4f);
 	}
@@ -49,4 +49,13 @@ public class AudioControl : MonoBehaviour {
 	{
 		AudioManager.instance.soundfx(7,.8f);
 	}
+	public void playJump()
+	{
+		AudioManager.instance.soundfx(8,.5f);
+	}
+	public void playWalk()
+	{
+		AudioManager.instance.soundfx(9,.6f);
+	}
+
 }
