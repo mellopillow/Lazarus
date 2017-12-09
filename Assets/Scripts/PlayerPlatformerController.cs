@@ -56,7 +56,7 @@ public class PlayerPlatformerController : PhysicsObject {
 			levelManager.RespawnPlayer ();
 		}
 
-        if (trans.localPosition.x > 0)
+        if (trans.localScale.x < 0)
         {
             
             trailOne.GetComponent<TrailRenderer>().enabled = false;
