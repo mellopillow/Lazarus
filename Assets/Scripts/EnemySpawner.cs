@@ -112,7 +112,7 @@ public class EnemySpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (this.CompareTag ("TurretSpawn")) {
+		if (!this.CompareTag ("TurretSpawn")) {
 			TimeSpawn ();
 		}
 
@@ -120,7 +120,6 @@ public class EnemySpawner : MonoBehaviour {
 			Instantiate (deathParticle, clone.transform.position, clone.transform.rotation);
 
 			Destroy (clone);
-			Destroy (deathParticle, 2f);
 
 			timer = 0;
 		}

@@ -57,5 +57,5 @@ MonoBehaviour:
   distanceFromTrigger: 2
   triggerLocations: []
   clip: {fileID: 0}
-  deathParticle: {fileID: 1905433841259606, guid: e647f1f8a59e949d2bf06ca1d6aaa235,
+  deathParticle: {fileID: 1458459499366552, guid: f8c54db0b5b334664b3cc8a181808a9a,
     type: 2}
