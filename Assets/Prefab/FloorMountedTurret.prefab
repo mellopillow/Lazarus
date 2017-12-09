@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4487177544273548}
   - component: {fileID: 212688327728595992}
   - component: {fileID: 61444745802135532}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,9 +89,10 @@ GameObject:
   - component: {fileID: 114359097149560642}
   - component: {fileID: 114286597063188108}
   - component: {fileID: 114385129684520346}
-  m_Layer: 0
+  - component: {fileID: 61306820803532706}
+  m_Layer: 12
   m_Name: FloorMountedTurret
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4441541967088936}
   - component: {fileID: 61778383562381928}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TopCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +230,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1390889867897846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.849, y: 1.317, z: 0.09660999}
+  m_LocalPosition: {x: -8.272612, y: 3.84, z: 0.09660999}
   m_LocalScale: {x: 0.7701607, y: 0.9595219, z: 1.8337153}
   m_Children:
   - {fileID: 4441541967088936}
@@ -309,16 +310,41 @@ PolygonCollider2D:
       - {x: -2.5276556, y: 0.8169314}
       - {x: -2.523806, y: -0.3015818}
       - {x: -0.20780984, y: 0.021061525}
+--- !u!61 &61306820803532706
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1390889867897846}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.006086588, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.47, y: 1.09}
+    newSize: {x: 2.25, y: 2.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1656404, y: 1.09}
+  m_EdgeRadius: 0
 --- !u!61 &61444745802135532
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1369790606796546}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.1595954, y: -0.090491325}
@@ -340,10 +366,10 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1589851918555490}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -396,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425b05ebcfd712147b9cfbdd19089679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0
 --- !u!114 &114359097149560642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -423,7 +449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 8
-  shootInterval: 0.5
+  shootInterval: 2
   projSpeed: 5
   projTimer: 0
   lookingRight: 1

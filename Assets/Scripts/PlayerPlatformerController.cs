@@ -56,7 +56,7 @@ public class PlayerPlatformerController : PhysicsObject {
 			levelManager.RespawnPlayer ();
 		}
 
-        if (trans.localPosition.x > 0)
+        if (trans.localScale.x < 0)
         {
             
             trailOne.GetComponent<TrailRenderer>().enabled = false;
@@ -194,7 +194,7 @@ public class PlayerPlatformerController : PhysicsObject {
                 catch
                 {
                     
-                    print("i dont know man this is weird");
+                    //print("i dont know man this is weird");
                 }
 
 
@@ -209,7 +209,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        print("on stay");
+        //print("on stay");
         if (collision.gameObject.tag == "Damageable" || collision.gameObject.tag == "Enemy")
         {
             if (!tookDamage)
