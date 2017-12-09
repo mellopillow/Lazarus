@@ -26,7 +26,7 @@ public class PlayerPlatformerController : PhysicsObject {
     private Attack isPlayerAttacking;
     private Transform trans;
     
-    private Health health;
+    public Health health;
     private Attack attackz;
 
 
@@ -45,7 +45,7 @@ public class PlayerPlatformerController : PhysicsObject {
     // Update is called once per frame
     protected override void ComputeVelocity()
     {
-        if (!spriteFlip)
+        if (trans.localPosition.x > 0)
         {
             
             trailOne.GetComponent<TrailRenderer>().enabled = false;
@@ -185,7 +185,7 @@ public class PlayerPlatformerController : PhysicsObject {
             }
         }  
 
-		if (health.dead) {
+		if (health.getDead()) {
 			levelManager.RespawnPlayer ();
 		}
     }
@@ -216,7 +216,7 @@ public class PlayerPlatformerController : PhysicsObject {
             }
         }
 
-		if (health.dead) {
+		if (health.getDead()) {
 			levelManager.RespawnPlayer ();
 		}
     }

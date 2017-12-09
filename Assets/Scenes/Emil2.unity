@@ -2194,6 +2194,11 @@ Prefab:
       propertyPath: AttackTriggerLeft
       value: 
       objectReference: {fileID: 182715246}
+    - target: {fileID: 114709380201317970, guid: dd7974252f51983428d905798ac49c72,
+        type: 2}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1346768038}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd7974252f51983428d905798ac49c72, type: 2}
   m_IsPrefabParent: 0
@@ -3490,6 +3495,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114068987273855064, guid: 5eadb9a2d53117641900aa2555536af8,
+        type: 2}
+      propertyPath: damage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5eadb9a2d53117641900aa2555536af8, type: 2}
   m_IsPrefabParent: 0
@@ -3638,6 +3648,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1346768038 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114852145645109994, guid: dd7974252f51983428d905798ac49c72,
+    type: 2}
+  m_PrefabInternal: {fileID: 754530940}
+  m_Script: {fileID: 11500000, guid: 37f1c5e2beb07f64bb47ce998898356e, type: 3}
 --- !u!1 &1348376814
 GameObject:
   m_ObjectHideFlags: 0
