@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿	using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,6 +23,7 @@ public class TurretAI : MonoBehaviour {
 
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
 		health = GetComponent<Health> ();
+
 	}
 	
 	// Update is called once per frame
@@ -99,7 +100,9 @@ public class TurretAI : MonoBehaviour {
 	{
 		if(collision.gameObject.tag == "PlayerAttack")
 		{
+			print ("hit by PlayerAttack");
 			health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
+
 		}
 	}
 }

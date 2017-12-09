@@ -9,11 +9,10 @@ public class RecallAbility : PhysicsObject
     public float recallCooldownTimer;
     public float recallCooldown = 10f;
 	public Transform lastLocation; //changed it from vector3 to Transform
-    public Vector3 startLocation;
 
     private bool recalling;
     private Transform transformRenderer;
-    private Transform prepPosition;
+	private Vector3 prepPosition;
     private SpriteRenderer spriteRenderer;
     private PlayerPlatformerController cont;
     private Animator animator;
@@ -24,12 +23,13 @@ public class RecallAbility : PhysicsObject
 
     void Awake()
     {
-        transformRenderer = GetComponent<Transform>();
+		transformRenderer = GetComponent<Transform>();
+
         cont = GetComponent<PlayerPlatformerController>();
         animator = GetComponent<Animator>();
+		recallState = RecallState.Ready;
         recallOutline = GameObject.Find("RecallOutline");
-        startLocation = transformRenderer.position;
-        //recallOutline.GetComponent<SpriteRenderer>().enabled = false; // turn off the outline
+        recallOutline.GetComponent<SpriteRenderer>().enabled = false; // turn off the outline
     }
 
     protected override void RecallAbilityCheck()
@@ -44,9 +44,12 @@ public class RecallAbility : PhysicsObject
                 if (isRecallKeyDown)
                 {
                     print("Recall prepped");
-					prepPosition = lastLocation;
+					
+					prepPosition = transformRenderer.localPosition;
+					//recallOutline.GetComponent<Transform> () = transformRenderer;
                     recallState = RecallState.Prepped;
-                    //recallOutline.GetComponent<SpriteRenderer>().enabled = false;
+				recallOutline.GetComponent<Transform> ().localPosition = prepPosition;
+                    recallOutline.GetComponent<SpriteRenderer>().enabled = true;
                 }
                 break;
 
@@ -54,8 +57,11 @@ public class RecallAbility : PhysicsObject
                 if (isRecallKeyDown)
                 {
                     print("Recalling!");
-                    transformRenderer = prepPosition;
+					transformRenderer.localPosition = prepPosition;
+					recallCooldownTimer = recallCooldown;
                     recallState = RecallState.Cooldown;
+					recallOutline.GetComponent<SpriteRenderer>().enabled = false;
+
                 }
                 break;
 
