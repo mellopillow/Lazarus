@@ -217,7 +217,14 @@ MonoBehaviour:
   musicSource: {fileID: 82724291982556990}
   music:
   - {fileID: 8300000, guid: cfda7f5990df79c4f853fa34e2813c84, type: 3}
-  - {fileID: 8300000, guid: e2a53ee7130124b42a372e9c47899333, type: 3}
+  - {fileID: 0}
   sfx:
-  - {fileID: 8300000, guid: 66b3fe2f9a44bd8418b1e0ce555bb274, type: 3}
-  - {fileID: 8300000, guid: 302fe3a730b4c9440b8df33df7d6e133, type: 3}
+  - {fileID: 8300000, guid: 713f3e87c68988c47af6f2091d72e9db, type: 3}
+  - {fileID: 8300000, guid: 713f3e87c68988c47af6f2091d72e9db, type: 3}
+  - {fileID: 8300000, guid: d1cbcb1fdec954049b32370a8315a511, type: 3}
+  - {fileID: 8300000, guid: 343c057479b97fb479f05c2c69e8eb4a, type: 3}
+  - {fileID: 8300000, guid: 5cd1da615674bc94ca8e4f3283ffbd9b, type: 3}
+  - {fileID: 8300000, guid: d12f1524106d6484aa387775c60deb42, type: 3}
+  - {fileID: 8300000, guid: e86f559e0f288f84f8b772cdf87a70e8, type: 3}
+  - {fileID: 8300000, guid: fbba170955d1fa841bbcbc199d4fb1a1, type: 3}
+  - {fileID: 8300000, guid: 714c9bf41228b974a9d79d45410578e7, type: 3}
