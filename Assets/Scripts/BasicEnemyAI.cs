@@ -31,6 +31,8 @@ public class BasicEnemyAI : MonoBehaviour {
     private Health health;
     private Animator animator;
 
+	public GameObject deathParticle;
+
 	GameObject patrolPointLeft, patrolPointRight;
 
 	// Use this for initialization
@@ -63,6 +65,12 @@ public class BasicEnemyAI : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+
+		if (health.dead) {
+			Instantiate (deathParticle, transform.position, transform.rotation);
+			Destroy (gameObject);
+		}
+
 		hitTimer += Time.deltaTime;
 
 		if (hitByPlayer && hitTimer >= hitDelay || !hitByPlayer) {
