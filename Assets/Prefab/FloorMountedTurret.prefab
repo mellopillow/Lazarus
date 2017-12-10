@@ -229,9 +229,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1390889867897846}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.272612, y: 3.84, z: 0.09660999}
-  m_LocalScale: {x: 0.7701607, y: 0.9595219, z: 1.8337153}
+  m_LocalRotation: {x: -0, y: -0, z: 0.090691805, w: 0.99587905}
+  m_LocalPosition: {x: -75.45, y: 16.61, z: 0.09660999}
+  m_LocalScale: {x: -0.84781116, y: 0.9595219, z: 1.8337153}
   m_Children:
   - {fileID: 4441541967088936}
   - {fileID: 4487177544273548}
@@ -240,7 +240,7 @@ Transform:
   - {fileID: 4961224632934800}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10.407001}
 --- !u!4 &4961224632934800
 Transform:
   m_ObjectHideFlags: 1
@@ -449,8 +449,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 8
-  shootInterval: 2
-  projSpeed: 5
+  shootInterval: 0.73
+  projSpeed: 7.71
   projTimer: 0
   lookingRight: 1
   bullet: {fileID: 1159207636845266, guid: ad5ea396fccc6b14ab031a8d1435db1e, type: 2}
@@ -532,8 +532,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1207061787
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4826a214eea22864b8a2b5ddce4432eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
