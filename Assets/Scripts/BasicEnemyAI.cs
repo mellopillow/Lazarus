@@ -183,7 +183,7 @@ public class BasicEnemyAI : MonoBehaviour
 
 
 
-                    if (hit.transform == target && !hitByPlayer && shootHitDelay == 0)
+                    if (hit.transform == target && !hitByPlayer && shootHitDelay == 0)   
                     {
                         shooting = true;
                         animator.SetBool("shooting", shooting);
