@@ -55,7 +55,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.328
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
   musicSource: {fileID: 82724291982556990}
   music:
   - {fileID: 8300000, guid: cfda7f5990df79c4f853fa34e2813c84, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: e2a53ee7130124b42a372e9c47899333, type: 3}
   sfx:
   - {fileID: 8300000, guid: 713f3e87c68988c47af6f2091d72e9db, type: 3}
   - {fileID: 8300000, guid: 713f3e87c68988c47af6f2091d72e9db, type: 3}
