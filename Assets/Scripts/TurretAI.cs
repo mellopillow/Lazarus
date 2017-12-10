@@ -18,6 +18,7 @@ public class TurretAI : MonoBehaviour {
 
 	private Health health;
 
+	public GameObject deathParticle;
 	// Use this for initialization
 	void Start () {
 
@@ -28,7 +29,10 @@ public class TurretAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (health.dead) {
+			Instantiate (deathParticle, transform.localPosition, transform.localRotation);
+			Destroy (gameObject);
+		}
         //For animations
         /*
         RangeCheck();
