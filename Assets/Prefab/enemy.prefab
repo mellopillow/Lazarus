@@ -153,7 +153,7 @@ MonoBehaviour:
   touchDamage: 1
   bulletDamage: 1
   attackDelay: 2
-  hitDelay: 0
+  hitDelay: 0.4
   projectile: {fileID: 1159207636845266, guid: ad5ea396fccc6b14ab031a8d1435db1e, type: 2}
   projectileForce: 250
   raycastPoint: {fileID: 4041673362512686}

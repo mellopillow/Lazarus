@@ -57,7 +57,18 @@ public class LevelManager : MonoBehaviour {
 		player.SetActive (true);
 		player.GetComponent<Health> ().currentHealth = player.GetComponent<Health> ().maxHealth;
 		player.GetComponent<Health> ().dead = false;
+        turnOnHealth();
+
 
 	}
+
+    public void turnOnHealth()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject healthbar = GameObject.FindGameObjectWithTag("health" + i);
+            healthbar.GetComponent<healthIcon>().TurnOn();
+        }
+    }
     
 }
