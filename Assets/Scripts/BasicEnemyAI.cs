@@ -23,6 +23,7 @@ public class BasicEnemyAI : MonoBehaviour
     public float attackDelay;
     public float hitDelay;
     float hitTimer;
+    public float shootHitDelay;
 
     public GameObject projectile;
     public float projectileForce;
@@ -83,7 +84,14 @@ public class BasicEnemyAI : MonoBehaviour
                 hitTimer = 0;
             }
         }
-
+        if (shootHitDelay > 0)
+        {
+            shootHitDelay -= Time.deltaTime;
+            if(shootHitDelay < 0)
+            {
+                shootHitDelay = 0;
+            }
+        }
         Debug.Log(hitTimer);
         if (hitTimer == 0)
         {
@@ -175,7 +183,7 @@ public class BasicEnemyAI : MonoBehaviour
 
 
 
-                    if (hit.transform == target && !hitByPlayer)
+                    if (hit.transform == target && !hitByPlayer && shootHitDelay == 0)
                     {
                         shooting = true;
                         animator.SetBool("shooting", shooting);
@@ -220,6 +228,7 @@ public class BasicEnemyAI : MonoBehaviour
 
             //animator.Play ("enemyDamaged");
             hitTimer = 1f;
+            shootHitDelay = 1.5f;
             shooting = false;
             patrolling = false;
             hitByPlayer = true;
