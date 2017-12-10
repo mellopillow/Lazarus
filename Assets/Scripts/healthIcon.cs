@@ -29,11 +29,20 @@ public class healthIcon : MonoBehaviour {
         //tagname = "health" + (health.currentHealth);
         //Debug.Log(tagname);
         //GameObject icon = GameObject.FindGameObjectWithTag(tagname);
-        transformRenderer.gameObject.SetActive(false);
+        transformRenderer.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public void playAnimation()
     {
         anim.Play();
+    }
+
+    public void TurnOn()
+    {
+        Debug.Log("Im TURNING ON");
+        transformRenderer.GetComponent<SpriteRenderer>().enabled = true;
+        transformRenderer.GetComponent<SpriteRenderer>().color = Color.white;
+        anim.Play("turnOn");
+        //transformRenderer.GetComponent<SpriteRenderer>().enabled = true;
     }
 }
