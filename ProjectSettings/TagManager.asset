@@ -21,6 +21,7 @@ TagManager:
   - TurretSpawn
   - Ceiling
   - Floor
+  - checkpoint
   layers:
   - Default
   - TransparentFX
