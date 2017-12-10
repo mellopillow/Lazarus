@@ -14,6 +14,7 @@ public class FlyingEnemy_v2 : MonoBehaviour {
 
 	private Health health;
 
+	public GameObject deathParticle;
 	bool attacking = false;
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,12 @@ public class FlyingEnemy_v2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (health.dead) {
+			Instantiate (deathParticle, transform.position, transform.rotation);
+			Destroy (gameObject);
+		}
+
 		playerInRange = Physics2D.OverlapCircle (transform.position, playerRange, playerLayer);
 		Vector2 direction = target.transform.position - transform.position;
 		direction.Normalize();

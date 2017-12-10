@@ -68,6 +68,11 @@ public class AudioManager : MonoBehaviour {
         PlayMusic(music[0], .9f);
     }
 
+    public void PlayMainMenu()
+    {
+        PlayMusic(music[1], .9f);
+    }
+
     public void StopMusic()
     {
         if (musicSource.isPlaying)

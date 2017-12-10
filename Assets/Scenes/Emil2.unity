@@ -503,7 +503,6 @@ GameObject:
   m_Component:
   - component: {fileID: 200128330}
   - component: {fileID: 200128329}
-  - component: {fileID: 200128328}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -511,22 +510,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &200128328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114604357803186498, guid: 5a438d4d96b72414a8c9243c8254ef74,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 200128327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157e3f4ccbea1a447800c5c911103406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TextToLoad: Lazarus' Pit
-  FadeInTime: 2
-  StayTime: 1.5
-  FadeOutTime: 2
 --- !u!114 &200128329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2600,7 +2583,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4770107437553572, guid: 186a3ed615e19c14dafed62a1ca8f047, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 186a3ed615e19c14dafed62a1ca8f047, type: 2}
@@ -2731,6 +2714,48 @@ Transform:
   m_Father: {fileID: 904892203}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1025040899 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1868882174361880, guid: 53921b5122b9dad4a93d299b09cfa82e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1558719560}
+--- !u!111 &1025040901
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1025040899}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 2550000400206c74b8596daea272847c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &1025040902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1025040899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dcdab7337d9d724aae947306cf88301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &1025040903
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1025040899}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1062543807
 GameObject:
   m_ObjectHideFlags: 0
@@ -3180,7 +3205,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4841342720774240, guid: 62ad94f2e00c2e245ba6d45cdeedc0d2, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62ad94f2e00c2e245ba6d45cdeedc0d2, type: 2}
@@ -3487,7 +3512,7 @@ Transform:
   m_Children:
   - {fileID: 2005660153}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1321997009
 MonoBehaviour:
@@ -3656,7 +3681,7 @@ Prefab:
     - target: {fileID: 224433840983035546, guid: 5ca23fbb5f870274ba2d11192e796104,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224433840983035546, guid: 5ca23fbb5f870274ba2d11192e796104,
         type: 2}
@@ -4206,12 +4231,12 @@ Prefab:
     - target: {fileID: 224348279212404590, guid: 53921b5122b9dad4a93d299b09cfa82e,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.2650757
+      value: -7.265091
       objectReference: {fileID: 0}
     - target: {fileID: 224348279212404590, guid: 53921b5122b9dad4a93d299b09cfa82e,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.2363892
+      value: 3.236374
       objectReference: {fileID: 0}
     - target: {fileID: 224348279212404590, guid: 53921b5122b9dad4a93d299b09cfa82e,
         type: 2}
@@ -4296,13 +4321,18 @@ Prefab:
     - target: {fileID: 224016868566780702, guid: 53921b5122b9dad4a93d299b09cfa82e,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 235.2
+      value: 89.7
       objectReference: {fileID: 0}
     - target: {fileID: 223458371465108626, guid: 53921b5122b9dad4a93d299b09cfa82e,
         type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1874345878}
+    - target: {fileID: 114950101698101522, guid: 53921b5122b9dad4a93d299b09cfa82e,
+        type: 2}
+      propertyPath: m_Text
+      value: Lazarus Pit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53921b5122b9dad4a93d299b09cfa82e, type: 2}
   m_IsPrefabParent: 0
@@ -4510,7 +4540,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1748373429
 GameObject:
@@ -4888,7 +4918,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1909743704
 GameObject:

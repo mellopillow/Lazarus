@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
         if (SceneManager.GetActiveScene().name == "Main_Menu")
         {
             AudioManager.instance.StopMusic();
-            AudioManager.instance.PlayMusicSource();
+            AudioManager.instance.PlayMainMenu();
         }
         else
         {

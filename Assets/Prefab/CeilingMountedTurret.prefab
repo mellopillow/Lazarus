@@ -457,6 +457,8 @@ MonoBehaviour:
   target: {fileID: 0}
   shootPointLeft: {fileID: 4532669766063232}
   shootPointRight: {fileID: 4614046488564628}
+  deathParticle: {fileID: 1458459499366552, guid: f8c54db0b5b334664b3cc8a181808a9a,
+    type: 2}
 --- !u!212 &212182914488426856
 SpriteRenderer:
   m_ObjectHideFlags: 1
