@@ -6,6 +6,7 @@ public class StaticLaserScript : MonoBehaviour {
 
 	public float moveSpeed;
 	public float laserDelay;
+	public bool isVertical;
 
 	float timer;
 	bool laserOn;
@@ -39,14 +40,24 @@ public class StaticLaserScript : MonoBehaviour {
 
 		}
 
+		if (!isVertical) {
+			if (movingUp) {
 
-		if (movingUp) {
+				rigidBody.velocity = new Vector2 (0, moveSpeed);
 
-			rigidBody.velocity = new Vector2 (0, moveSpeed);
+			} else {
 
+				rigidBody.velocity = new Vector2 (0, -moveSpeed);
+			}
 		} else {
+			if (movingUp) {
 
-			rigidBody.velocity = new Vector2 (0, -moveSpeed);
+				rigidBody.velocity = new Vector2 (moveSpeed, 0);
+
+			} else {
+
+				rigidBody.velocity = new Vector2 (-moveSpeed, 0);
+			}
 		}
 		/*
 		Vector3 pos = transform.localPosition;
