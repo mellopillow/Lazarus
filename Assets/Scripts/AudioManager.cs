@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour {
     public static AudioManager instance = null;
     public AudioClip[] music;
     public AudioClip[] sfx;
-    private bool playedMusic = false;
+    private static bool playedMusic = false;
 
 
 
@@ -30,7 +30,6 @@ public class AudioManager : MonoBehaviour {
             Destroy(this.gameObject);
         }
         
-        //Use if you don't want to destroy between scenes.
         DontDestroyOnLoad(this.gameObject);
 
         Debug.Log(SceneManager.GetActiveScene().name);
