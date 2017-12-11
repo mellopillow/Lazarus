@@ -570,10 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
-<<<<<<< HEAD
   currentHealth: 0
-=======
->>>>>>> origin/master
   dead: 0
 --- !u!114 &114159063308532272
 MonoBehaviour:
