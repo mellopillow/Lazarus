@@ -13,6 +13,9 @@ public class lazorScript : MonoBehaviour {
 	public float beamOff;
 	public bool beamFiring;
 
+	public Sprite lazor;
+	public Sprite warning;
+
     public SpriteRenderer sprite;
     public Collider2D lazerRange;
     public Damage damage;
@@ -31,6 +34,7 @@ public class lazorScript : MonoBehaviour {
 	    switch (lazorState)
 	    {
 	        case LazorState.Ready:
+	        	sprite.sprite = warning;
 	        	lazerRange.enabled = false;
 	            lazorState = LazorState.Firing;
 	            beamFiring = true;
@@ -45,7 +49,6 @@ public class lazorScript : MonoBehaviour {
 	            {
 
 	              	lazerRange.enabled = true;
-	              	sprite.enabled = false;
 	                beamDelay = 0;
 
 	                lazorState = LazorState.Off;
@@ -56,8 +59,10 @@ public class lazorScript : MonoBehaviour {
 
 	        case LazorState.Off:
 	        	beamOff -= Time.deltaTime;
+	        	sprite.sprite = lazor;
 	        	if (beamOff <= 0)
 	        	{
+	              	sprite.enabled = false;
 	        		lazerRange.enabled = false;
 	        		lazorState = LazorState.Dormant;
 	        	}
