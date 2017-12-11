@@ -50,3 +50,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Emil4.unity
     guid: 1a7ccab37fe0ece4ea444f3660a0df7d
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 81c77584f148e184f9b3224cbe9f938d

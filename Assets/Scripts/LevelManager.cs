@@ -59,6 +59,8 @@ public class LevelManager : MonoBehaviour {
 		player.SetActive (true);
         player.GetComponent<Health>().currentHealth = player.GetComponent<Health>().maxHealth;
         player.GetComponent<Health> ().dead = false;
+        player.GetComponent<BoxCollider2D>().size = new Vector2(7.78f, 13.17f);
+        Debug.Log(player.GetComponent<BoxCollider2D>().size);
         turnOnHealth();
 
 
