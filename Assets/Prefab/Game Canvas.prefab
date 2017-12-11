@@ -174,6 +174,9 @@ GameObject:
   - component: {fileID: 224016868566780702}
   - component: {fileID: 222543401473978570}
   - component: {fileID: 114950101698101522}
+  - component: {fileID: 111471868977814712}
+  - component: {fileID: 225420439015457334}
+  - component: {fileID: 114882233959560926}
   m_Layer: 5
   m_Name: Scene Text
   m_TagString: SceneText
@@ -343,6 +346,21 @@ Animation:
   - {fileID: 7400000, guid: f09ad09bb1319284ab845c747374f0c9, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!111 &111471868977814712
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1868882174361880}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 2550000400206c74b8596daea272847c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!111 &111737936493991992
@@ -568,6 +586,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df6965f5b950d54992a8e0a4446e23f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114882233959560926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1868882174361880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dcdab7337d9d724aae947306cf88301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114950101698101522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -600,7 +629,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Lazarus Pit
 --- !u!114 &114976252566804704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1011,6 +1040,17 @@ RectTransform:
   m_AnchoredPosition: {x: -2.954908, y: -0.6063702}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &225420439015457334
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1868882174361880}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!251 &251360841872994206
 PlatformEffector2D:
   m_ObjectHideFlags: 1
