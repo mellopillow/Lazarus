@@ -38,7 +38,6 @@ public class PlayerPlatformerController : PhysicsObject {
 		if (health != null) {
 			print ("health is not null");
 		}
-
         spriteRenderer = GetComponent<SpriteRenderer>();
         isPlayerAttacking = GetComponent<Attack>();
         levelManager = GameObject.FindObjectOfType<LevelManager>();
@@ -55,23 +54,6 @@ public class PlayerPlatformerController : PhysicsObject {
 		if (health.dead) {
 			levelManager.RespawnPlayer ();
 		}
-
-        if (trans.localScale.x < 0)
-        {
-            
-            trailOne.GetComponent<TrailRenderer>().enabled = false;
-            trailTwo.GetComponent<TrailRenderer>().enabled = true;
-            trailThree.GetComponent<TrailRenderer>().enabled = false;
-            trailFour.GetComponent<TrailRenderer>().enabled = true;
-
-        }
-        else
-        {
-            trailOne.GetComponent<TrailRenderer>().enabled = true;
-            trailTwo.GetComponent<TrailRenderer>().enabled = false;
-            trailThree.GetComponent<TrailRenderer>().enabled = true;
-            trailFour.GetComponent<TrailRenderer>().enabled = false;
-        }
         //Debug.Log(spriteFlip);
         //Debug.Log(trailOne.GetComponent<TrailRenderer>().enabled);
         if (tookDamage)

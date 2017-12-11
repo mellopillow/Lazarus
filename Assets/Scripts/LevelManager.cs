@@ -9,9 +9,11 @@ public class LevelManager : MonoBehaviour {
 	public GameObject spawn;
 	public GameObject deathParticle;
 	public float respawnDelay;
+    private Vector3 spawnLocation;
 
 	void Start(){
 		player = GameObject.FindGameObjectWithTag ("Player");
+        setSpawn();
 	}
 
 
@@ -53,7 +55,7 @@ public class LevelManager : MonoBehaviour {
 		player.SetActive (false);
 		player.GetComponent<Renderer> ().enabled = false;
 		yield return new WaitForSeconds (respawnDelay);
-		player.transform.position = spawn.transform.position;
+        player.transform.position = spawn.transform.position;
 		player.SetActive (true);
 		player.GetComponent<Health> ().currentHealth = player.GetComponent<Health> ().maxHealth;
 		player.GetComponent<Health> ().dead = false;
@@ -69,6 +71,16 @@ public class LevelManager : MonoBehaviour {
             GameObject healthbar = GameObject.FindGameObjectWithTag("health" + i);
             healthbar.GetComponent<healthIcon>().TurnOn();
         }
+    }
+
+    public void setNewSpawn(Vector3 spawnPosition)
+    {
+        spawnLocation = spawnPosition;   
+    }
+
+    public void setSpawn()
+    {
+        spawnLocation = spawn.transform.position;
     }
     
 }
