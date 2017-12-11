@@ -10,6 +10,7 @@ public class Health : MonoBehaviour {
 
 	void Start(){
 		dead = false;
+        currentHealth = maxHealth;
 	}
 
 	public void takeDamage(int damageDone)
