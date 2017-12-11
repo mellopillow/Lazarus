@@ -156,6 +156,16 @@ Prefab:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 82724291982556990, guid: 62ad94f2e00c2e245ba6d45cdeedc0d2,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82724291982556990, guid: 62ad94f2e00c2e245ba6d45cdeedc0d2,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 150bf9c66fb8a8c4eb6b80bbb04713c1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62ad94f2e00c2e245ba6d45cdeedc0d2, type: 2}
   m_IsPrefabParent: 0
@@ -169,7 +179,7 @@ Prefab:
     - target: {fileID: 224533097925061210, guid: 02b9bd66194c9114d87e7d8617cb15d6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 563
+      value: 541.5
       objectReference: {fileID: 0}
     - target: {fileID: 224533097925061210, guid: 02b9bd66194c9114d87e7d8617cb15d6,
         type: 2}
@@ -683,7 +693,7 @@ Prefab:
     - target: {fileID: 224177987577160014, guid: 5a438d4d96b72414a8c9243c8254ef74,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 565.9549
+      value: 544.4549
       objectReference: {fileID: 0}
     - target: {fileID: 224177987577160014, guid: 5a438d4d96b72414a8c9243c8254ef74,
         type: 2}
