@@ -11,6 +11,7 @@ public class Health : MonoBehaviour {
 	void Start(){
 		currentHealth = maxHealth;
 		dead = false;
+        currentHealth = maxHealth;
 	}
 
 	public void takeDamage(int damageDone)
