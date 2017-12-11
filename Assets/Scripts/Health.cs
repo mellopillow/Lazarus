@@ -16,6 +16,7 @@ public class Health : MonoBehaviour {
 	{
 		if (!dead)
 		{
+			
 			print("taking damage: " + damageDone);
 			currentHealth -= damageDone;
 			if (currentHealth <= 0)
@@ -25,7 +26,7 @@ public class Health : MonoBehaviour {
 			}
 		}
 		else
-		{
+		{	
 			print("Cant take Damage, this entity has no health");
 		}
 	}
