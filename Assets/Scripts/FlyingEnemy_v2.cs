@@ -33,7 +33,7 @@ public class FlyingEnemy_v2 : MonoBehaviour {
 			Instantiate (deathParticle, transform.position, transform.rotation);
 			Destroy (gameObject);
 		}
-
+		//AudioManager.instance.soundfx (10, 0.3f);
 		playerInRange = Physics2D.OverlapCircle (transform.position, playerRange, playerLayer);
 		Vector2 direction = target.transform.position - transform.position;
 		direction.Normalize();
