@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425b05ebcfd712147b9cfbdd19089679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 1
 --- !u!114 &114466076445423890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +154,7 @@ MonoBehaviour:
   bulletDamage: 1
   attackDelay: 0.52
   hitDelay: 0.1
+  shootHitDelay: 0
   projectile: {fileID: 1159207636845266, guid: ad5ea396fccc6b14ab031a8d1435db1e, type: 2}
   projectileForce: 250
   raycastPoint: {fileID: 4041673362512686}
@@ -171,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
-  currentHealth: 5
+  currentHealth: 0
   dead: 0
 --- !u!114 &114781934167022116
 MonoBehaviour:

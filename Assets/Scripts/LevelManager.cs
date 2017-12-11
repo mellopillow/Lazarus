@@ -57,8 +57,8 @@ public class LevelManager : MonoBehaviour {
 		yield return new WaitForSeconds (respawnDelay);
         player.transform.position = spawn.transform.position;
 		player.SetActive (true);
-		Health.currentHealth = player.GetComponent<Health> ().maxHealth;
-		player.GetComponent<Health> ().dead = false;
+        player.GetComponent<Health>().currentHealth = player.GetComponent<Health>().maxHealth;
+        player.GetComponent<Health> ().dead = false;
         turnOnHealth();
 
 
