@@ -6,12 +6,22 @@ public class healthIcon : MonoBehaviour {
     private Transform transformRenderer;
     private string tagname;
     private Animation anim;
+    private double curHealth;
     //private Health health;
     
 	// Use this for initialization
 	void Start () {
+
+
         transformRenderer = GetComponent<Transform>();
         tagname = transformRenderer.tag;
+        curHealth = char.GetNumericValue(tagname[tagname.Length-1]);
+
+        if (curHealth >= Health.currentHealth)
+        {
+            TurnOff();
+        }
+
         Debug.Log(tagname);
         anim = GetComponent<Animation>();
         //health = GetComponent<Health>();

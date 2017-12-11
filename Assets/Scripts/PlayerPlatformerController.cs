@@ -165,13 +165,16 @@ public class PlayerPlatformerController : PhysicsObject {
             {
                 try
                 {
-                    Debug.Log("Current health is: " + health.currentHealth);
+                    Debug.Log("Current health is: " + Health.currentHealth);
                 health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
                 invulnerability = damageTimer;
                 tookDamage = true;
-                GameObject healthbar = GameObject.FindGameObjectWithTag("health" + health.currentHealth);
-                healthbar.GetComponent<healthIcon>().playAnimation();
-                
+
+                    for (int i = 5; i >= Health.currentHealth; --i)
+                    {
+                        GameObject healthbar = GameObject.FindGameObjectWithTag("health" + Health.currentHealth);
+                        healthbar.GetComponent<healthIcon>().playAnimation();
+                    }
                 }
                 catch
                 {
@@ -198,12 +201,15 @@ public class PlayerPlatformerController : PhysicsObject {
             {
                 try
                 {
-                    Debug.Log("Current health is: " + health.currentHealth);
+                    Debug.Log("Current health is: " + Health.currentHealth);
                     health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
                     invulnerability = damageTimer;
                     tookDamage = true;
-                    GameObject healthbar = GameObject.FindGameObjectWithTag("health" + health.currentHealth);
-                    healthbar.GetComponent<healthIcon>().playAnimation();
+                    for (int i = 5; i >= Health.currentHealth; --i)
+                    {
+                        GameObject healthbar = GameObject.FindGameObjectWithTag("health" + Health.currentHealth);
+                        healthbar.GetComponent<healthIcon>().playAnimation();
+                    }
                 }
                 catch
                 {
