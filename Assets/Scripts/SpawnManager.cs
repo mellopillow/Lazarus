@@ -28,8 +28,12 @@ public class SpawnManager : MonoBehaviour {
 	}
 
 	void Start () {
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        Transform startpoint = null;
+        startpoint = GameObject.FindGameObjectWithTag("startpoint" + startPoint.destination).transform;
+        Player.transform.position = startpoint.position;
 
-		GameObject[] scientistSpawns = GameObject.FindGameObjectsWithTag("ScientistSpawn");
+        GameObject[] scientistSpawns = GameObject.FindGameObjectsWithTag("ScientistSpawn");
 		GameObject[] flyingEnemySpawns = GameObject.FindGameObjectsWithTag("FlyingEnemySpawn");
 		GameObject[] turretSpawns = GameObject.FindGameObjectsWithTag("TurretSpawn");
 

@@ -22,6 +22,8 @@ TagManager:
   - Ceiling
   - Floor
   - checkpoint
+  - startpoint1
+  - startpoint2
   layers:
   - Default
   - TransparentFX
