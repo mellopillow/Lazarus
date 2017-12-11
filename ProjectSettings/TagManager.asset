@@ -67,6 +67,9 @@ TagManager:
   - name: Middleground
     uniqueID: 3259519229
     locked: 0
+  - name: MiddleForeground
+    uniqueID: 1717096513
+    locked: 0
   - name: ForeGround
     uniqueID: 1207061787
     locked: 0
