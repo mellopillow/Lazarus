@@ -217,7 +217,7 @@ MonoBehaviour:
   musicSource: {fileID: 82724291982556990}
   music:
   - {fileID: 8300000, guid: cfda7f5990df79c4f853fa34e2813c84, type: 3}
-  - {fileID: 8300000, guid: e2a53ee7130124b42a372e9c47899333, type: 3}
+  - {fileID: 0}
   sfx:
   - {fileID: 8300000, guid: 713f3e87c68988c47af6f2091d72e9db, type: 3}
   - {fileID: 8300000, guid: 713f3e87c68988c47af6f2091d72e9db, type: 3}
@@ -229,3 +229,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fbba170955d1fa841bbcbc199d4fb1a1, type: 3}
   - {fileID: 8300000, guid: 88266be106c59a041af255e1aa07175e, type: 3}
   - {fileID: 8300000, guid: dcb1a9f624e6fca4a82339dfccdd379a, type: 3}
+  - {fileID: 8300000, guid: f5f5f8b1dbd45a34b8046fcc5dff809e, type: 3}

@@ -57,5 +57,9 @@ public class AudioControl : MonoBehaviour {
 	{
 		AudioManager.instance.soundfx(9,.6f);
 	}
+	public void playChopperSounds()
+	{
+		AudioManager.instance.soundfx (10, .5f);
+	}
 
 }
