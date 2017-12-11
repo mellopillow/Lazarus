@@ -34,6 +34,13 @@ public class ButtonFunctions : MonoBehaviour {
     {
         
     }
+
+    public void audio()
+    {
+
+        AudioManager.instance.playGameTheme();
+
+    }
     public void LoadByIndex(int index)
     {
         SceneManager.LoadScene(index);

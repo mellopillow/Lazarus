@@ -35,19 +35,32 @@ public class AudioManager : MonoBehaviour {
         Debug.Log(SceneManager.GetActiveScene().name);
         if (SceneManager.GetActiveScene().name == "Main_Menu")
         {
-            AudioManager.instance.StopMusic();
-            AudioManager.instance.PlayMainMenu();
+            //AudioManager.instance.StopMusic();
+            //AudioManager.instance.PlayMainMenu();
+            PlayMusicSource();
         }
         else
         {
             if (playedMusic == false)
             {
-                AudioManager.instance.PlayTheme();
+                //AudioManager.instance.PlayTheme();
+                musicSource.clip = music[0];
+                PlayMusicSource();
+                musicSource.loop = true;
                 playedMusic = true;
             }
         }
 
 
+    }
+
+    public void playGameTheme()
+    {
+        StopMusic();
+        musicSource.clip = music[0];
+        PlayMusicSource();
+        musicSource.loop = true;
+        playedMusic = true;
     }
 
     public void Update()
