@@ -263,9 +263,11 @@ MonoBehaviour:
   lazorState: 0
   beamDelayMax: 4
   beamDelay: 0
-  beamOffing: 0.25
+  beamOffing: 0.3
   beamOff: 0
   beamFiring: 0
+  lazor: {fileID: 21300000, guid: b12e9c9ab0a5a0f4284ef00ea98920ca, type: 3}
+  warning: {fileID: 21300000, guid: 5cdb1b1b18b00c74da2c2882ed8e571f, type: 3}
   sprite: {fileID: 0}
   lazerRange: {fileID: 0}
   damage: {fileID: 0}
@@ -384,11 +386,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5dd3b060c091658458134b765f714934, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &455255236 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4603834673074384, guid: dd7974252f51983428d905798ac49c72,
-    type: 2}
-  m_PrefabInternal: {fileID: 1367671687}
 --- !u!1 &464575425
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,9 +609,11 @@ MonoBehaviour:
   lazorState: 0
   beamDelayMax: 4
   beamDelay: 0
-  beamOffing: 0.25
+  beamOffing: 0.3
   beamOff: 0
   beamFiring: 0
+  lazor: {fileID: 21300000, guid: b12e9c9ab0a5a0f4284ef00ea98920ca, type: 3}
+  warning: {fileID: 21300000, guid: 5cdb1b1b18b00c74da2c2882ed8e571f, type: 3}
   sprite: {fileID: 0}
   lazerRange: {fileID: 0}
   damage: {fileID: 0}
@@ -1412,7 +1411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 0}
-  player: {fileID: 455255236}
+  player: {fileID: 0}
   attackable: 1
   canFire: 1
   lazorCooldownMax: 10
@@ -1605,9 +1604,11 @@ MonoBehaviour:
   lazorState: 0
   beamDelayMax: 4
   beamDelay: 0
-  beamOffing: 0.25
+  beamOffing: 0.3
   beamOff: 0
   beamFiring: 0
+  lazor: {fileID: 21300000, guid: b12e9c9ab0a5a0f4284ef00ea98920ca, type: 3}
+  warning: {fileID: 21300000, guid: 5cdb1b1b18b00c74da2c2882ed8e571f, type: 3}
   sprite: {fileID: 0}
   lazerRange: {fileID: 0}
   damage: {fileID: 0}
@@ -2034,7 +2035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef63e0b07907747a3a0c75f5f26e59b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 455255236}
+  target: {fileID: 2138939608}
   smoothSpeed: 10
   offset: {x: 0, y: 3, z: -2}
   bounds: 0
@@ -2187,3 +2188,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f350b2374f20d64da896e8d4e65e72a, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &2138939608 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4999218127173390, guid: dd7974252f51983428d905798ac49c72,
+    type: 2}
+  m_PrefabInternal: {fileID: 1367671687}
