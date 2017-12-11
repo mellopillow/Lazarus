@@ -151,11 +151,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 82724291982556990, guid: 62ad94f2e00c2e245ba6d45cdeedc0d2,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62ad94f2e00c2e245ba6d45cdeedc0d2, type: 2}
   m_IsPrefabParent: 0
@@ -773,12 +768,12 @@ Prefab:
     - target: {fileID: 224177987577160014, guid: 5a438d4d96b72414a8c9243c8254ef74,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 249.4549
+      value: 249.45491
       objectReference: {fileID: 0}
     - target: {fileID: 224177987577160014, guid: 5a438d4d96b72414a8c9243c8254ef74,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 139.10638
+      value: 139.10637
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a438d4d96b72414a8c9243c8254ef74, type: 2}
