@@ -51,6 +51,7 @@ public class PlayerPlatformerController : PhysicsObject {
     // Update is called once per frame
     protected override void ComputeVelocity()
     {
+        
 		if (health.dead) {
 			levelManager.RespawnPlayer ();
 		}
@@ -165,16 +166,14 @@ public class PlayerPlatformerController : PhysicsObject {
             {
                 try
                 {
-                    Debug.Log("Current health is: " + Health.currentHealth);
+                    
                 health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
                 invulnerability = damageTimer;
                 tookDamage = true;
+                GameObject healthbar = GameObject.FindGameObjectWithTag("health" + health.currentHealth);
+                healthbar.GetComponent<healthIcon>().playAnimation();
 
-                    for (int i = 5; i >= Health.currentHealth; --i)
-                    {
-                        GameObject healthbar = GameObject.FindGameObjectWithTag("health" + Health.currentHealth);
-                        healthbar.GetComponent<healthIcon>().playAnimation();
-                    }
+
                 }
                 catch
                 {
@@ -201,15 +200,12 @@ public class PlayerPlatformerController : PhysicsObject {
             {
                 try
                 {
-                    Debug.Log("Current health is: " + Health.currentHealth);
+                    
                     health.takeDamage(collision.gameObject.GetComponent<Damage>().damage);
                     invulnerability = damageTimer;
                     tookDamage = true;
-                    for (int i = 5; i >= Health.currentHealth; --i)
-                    {
-                        GameObject healthbar = GameObject.FindGameObjectWithTag("health" + Health.currentHealth);
-                        healthbar.GetComponent<healthIcon>().playAnimation();
-                    }
+                    GameObject healthbar = GameObject.FindGameObjectWithTag("health" + health.currentHealth);
+                    healthbar.GetComponent<healthIcon>().playAnimation();
                 }
                 catch
                 {

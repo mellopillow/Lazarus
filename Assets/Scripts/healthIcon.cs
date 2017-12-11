@@ -17,7 +17,7 @@ public class healthIcon : MonoBehaviour {
         tagname = transformRenderer.tag;
         curHealth = char.GetNumericValue(tagname[tagname.Length-1]);
 
-        if (curHealth >= Health.currentHealth)
+        if (curHealth >= 6)
         {
             TurnOff();
         }

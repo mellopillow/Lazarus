@@ -40,7 +40,7 @@ public class BasicEnemyAI : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        
 
         health = GetComponent<Health>();
         touchDamageScript = GetComponent<Damage>();
@@ -70,7 +70,14 @@ public class BasicEnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        try
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        catch
+        {
+            
+        }
         if (health.dead)
         {
             Instantiate(deathParticle, transform.position, transform.rotation);
@@ -92,7 +99,7 @@ public class BasicEnemyAI : MonoBehaviour
                 shootHitDelay = 0;
             }
         }
-        Debug.Log(hitTimer);
+        
         if (hitTimer == 0)
         {
             hitByPlayer = false;
@@ -153,7 +160,16 @@ public class BasicEnemyAI : MonoBehaviour
             }
 
             //Check if player is in range
-            float distanceToPlayer = Vector3.Distance(transform.position, target.position);
+            float distanceToPlayer;
+            try
+            {
+                distanceToPlayer = Vector3.Distance(transform.position, target.position);
+            }
+            catch
+            {
+                Debug.Log("bleh");
+                distanceToPlayer = 100000;
+            }
 
             if (right)
             {
