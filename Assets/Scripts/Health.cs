@@ -9,6 +9,7 @@ public class Health : MonoBehaviour {
     public bool dead;
 
 	void Start(){
+		currentHealth = maxHealth;
 		dead = false;
         currentHealth = maxHealth;
 	}
