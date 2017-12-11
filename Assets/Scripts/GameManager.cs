@@ -11,21 +11,13 @@ public class GameManager : MonoBehaviour {
     private bool paused;
     
     
+    
 
     void Start()
     {
         Debug.Log("Start");
         Time.timeScale = 1;
-        Debug.Log(SceneManager.GetActiveScene().name);
-        if (SceneManager.GetActiveScene().name == "Main_Menu")
-        {
-            AudioManager.instance.StopMusic();
-            AudioManager.instance.PlayMainMenu();
-        }
-        else
-        {
-            AudioManager.instance.PlayTheme();
-        }
+        
     }
     // Use this for initialization
     
