@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour {
 
@@ -12,9 +13,10 @@ public class AudioManager : MonoBehaviour {
     public static AudioManager instance = null;
     public AudioClip[] music;
     public AudioClip[] sfx;
-    
+    private bool playedMusic = false;
 
-   
+
+
 
     void Awake()
     {
@@ -30,6 +32,21 @@ public class AudioManager : MonoBehaviour {
         
         //Use if you don't want to destroy between scenes.
         DontDestroyOnLoad(this.gameObject);
+
+        Debug.Log(SceneManager.GetActiveScene().name);
+        if (SceneManager.GetActiveScene().name == "Main_Menu")
+        {
+            AudioManager.instance.StopMusic();
+            AudioManager.instance.PlayMainMenu();
+        }
+        else
+        {
+            if (playedMusic == false)
+            {
+                AudioManager.instance.PlayTheme();
+                playedMusic = true;
+            }
+        }
 
 
     }

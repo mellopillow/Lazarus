@@ -4423,11 +4423,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!4 &1478685418 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4603834673074384, guid: dd7974252f51983428d905798ac49c72,
-    type: 2}
-  m_PrefabInternal: {fileID: 754530940}
 --- !u!1001 &1481482324
 Prefab:
   m_ObjectHideFlags: 0
@@ -5638,7 +5633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef63e0b07907747a3a0c75f5f26e59b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1478685418}
+  target: {fileID: 2082695927}
   smoothSpeed: 10
   offset: {x: 0, y: 2.5, z: -10}
   bounds: 1
@@ -6614,6 +6609,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!4 &2082695927 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4999218127173390, guid: dd7974252f51983428d905798ac49c72,
+    type: 2}
+  m_PrefabInternal: {fileID: 754530940}
 --- !u!1 &2097676406
 GameObject:
   m_ObjectHideFlags: 0
