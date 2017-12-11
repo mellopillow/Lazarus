@@ -25,6 +25,12 @@ public class Health : MonoBehaviour {
 			{
 				currentHealth = 0;
 				dead = true;
+                if(maxHealth == 10)
+                {
+                    LevelManager level = GameObject.FindObjectOfType<LevelManager>();
+                    level.LoadLevel("EndScreen");
+                    
+                }
 			}
 		}
 		else
